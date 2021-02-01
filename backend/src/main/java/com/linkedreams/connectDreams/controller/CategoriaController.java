@@ -38,10 +38,10 @@ public class CategoriaController {
     	return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
     }
     
-//    @GetMapping("/causa/{causa}")
-//    public ResponseEntity<List<Categoria>>GetByCausa(@PathVariable String causa){
-//    	return ResponseEntity.ok(repository.findAllByCausaContainingIgnoreCase(causa));
-//    }
+    @GetMapping("/causa/{causa}")
+    public ResponseEntity<List<Categoria>>GetByCausa(@PathVariable String causa){
+    	return ResponseEntity.ok(repository.findAllByCausaContainingIgnoreCase(causa));
+   }
     @PostMapping
     public ResponseEntity<Categoria> post (@RequestBody Categoria categoria){
     	return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(categoria));
