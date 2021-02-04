@@ -9,26 +9,25 @@ import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.NotNull;
 
-
-
 @Entity
 @Table (name = "tb_usuario")
 public class Usuario {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
 	@NotNull
-	@Size (min = 12, max = 255)
+	@Size (min = 5, max = 255)
 	private String nome_completo;
 	
 	@NotNull
-	@Size (min = 11, max = 255)
+	@Size (min = 5, max = 255)
 	@Column (unique = true)
 	private String email;
 	
 	@NotNull
-	@Size (min = 6, max = 15)
+	@Size (min = 6, max = 255)
 	private String senha;
 
 	public long getId() {

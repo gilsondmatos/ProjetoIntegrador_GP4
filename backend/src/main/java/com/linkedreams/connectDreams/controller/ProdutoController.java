@@ -21,7 +21,7 @@ import com.linkedreams.connectDreams.repository.ProdutoRepository;
 
 @RestController
 @RequestMapping ("/produtos")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProdutoController 
 {
 	@Autowired
@@ -49,7 +49,7 @@ public class ProdutoController
 
 	@PutMapping
 	public ResponseEntity<Produto> Put (@RequestBody Produto produto){
-		return ResponseEntity.ok(repository.save(produto));
+		return ResponseEntity.status(HttpStatus.OK).body(repository.save(produto));
 	}
 	
 	@DeleteMapping ("/{id}")
