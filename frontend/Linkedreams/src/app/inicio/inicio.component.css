@@ -1,0 +1,14 @@
+.carrousel-size {
+  object-fit: cover;
+  height: 400px;
+   object-position: 0 20%;
+}
+
+
+.card-color{
+   background: #F1F9FF
+}
+
+ .bg-footer {
+  background: #2699FB;
+}
