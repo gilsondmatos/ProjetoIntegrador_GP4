@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-cadastro-produto',
@@ -10,6 +11,13 @@ export class CadastroProdutoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+                //Toggle Click Function
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+
+          
   }
 
 }

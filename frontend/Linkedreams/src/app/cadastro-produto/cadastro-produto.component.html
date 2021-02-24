@@ -1,1 +1,108 @@
-<p>cadastro-produto works!</p>
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-light border-right " id="sidebar-wrapper" style="background-color: #F1F9FF;">
+    <div class="sidebar-heading text-center">Menu</div>
+    <div class="list-group list-group-flush">
+      <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-plus-circle"
+          aria-hidden="true"></i> Cadastrar</a>
+      <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-list-ol"
+          aria-hidden="true"></i> Produtos</a>
+      <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-info-circle"
+          aria-hidden="true"></i> Suporte técnico</a>
+      <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-sign-out"
+          aria-hidden="true"></i> Sair</a>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light border-bottom color-secondary">
+
+      <button class="btn btn-primary" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    
+    </nav>
+
+    <div class="container-fluid ">
+      <div class="row d-flex justify-content-center mt-5">
+        <div class="col-md-10 color-principal">
+          <h1 class="mt-4 text-center text-white ">Cadastrar produtos</h1>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center color-texto">
+        <div class="col-md-5 color-secondary">
+
+
+
+
+          <div class="form-group mt-2 ">
+            <label for="nome">Nome:</label>
+            <input class="form-control" type="text" name="nome" id="nome" placeholder="Digite o nome do produto">
+          </div>
+          <div class="form-group">
+            <label for="usuario">Valor:</label>
+            <input class="form-control" type="text" name="valor" id="valor" placeholder="Digite o valor do produto">
+          </div>
+
+
+        </div>
+        <div class="col-md-5 color-secondary">
+
+          <div class="form-group mt-2">
+            <label for="tipo">Tipo:</label>
+            <select class="form-control" name="tipo" id="tipo">
+              <option>Selecione um tipo:</option>
+              <option value="normal">Venda</option>
+              <option value="adm">Evento</option>
+              <option value="adm">Doação</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <legend class="col-form-label ">Status:</legend>
+            <div class="row">
+              <div class=" form-check ml-3">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="opcao1" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                  Ativado
+                </label>
+              </div>
+              <div class="form-check ml-2">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="opcao2">
+                <label class="form-check-label" for="exampleRadios2">
+                  Desativado
+                </label>
+              </div>
+            </div>
+           
+          </div>
+
+
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center color-texto">
+        <div class="col-md-10 color-secondary">
+          <div class="form-group">
+            <label for="foto">Link da Foto :</label>
+            <input class="form-control color-texto" type="text" name="foto" id="foto" placeholder="Link da foto do produto">
+        </div>
+          <div class="form-group">
+            <label for="texto">Descrição:</label>
+            <textarea class="form-control" name="texto" id="texto" rows="3" placeholder="Faça uma breve descrição do produto"></textarea>
+          </div>
+
+          <div class="d-flex justify-content-center mb-2">
+
+            <button type="submit" class="btn btn-secondary text-white mr-4">Cancelar</button>
+            <button type="submit" class="btn color-principal text-white">Cadastrar</button>
+          </div>
+
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
