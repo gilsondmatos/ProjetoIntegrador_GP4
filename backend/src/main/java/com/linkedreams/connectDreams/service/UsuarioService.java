@@ -32,6 +32,8 @@ public class UsuarioService {
 
 		return Optional.of(repository.save(usuario));
 	}
+	
+	
 
 	public Optional<UsuarioLogin> Logar(Optional<UsuarioLogin> user) {
 
@@ -47,13 +49,29 @@ public class UsuarioService {
 
 				user.get().setToken(authHeader);				
 				user.get().setNome_completo(usuario.get().getNome_completo());
-				user.get().setSenha(usuario.get().getSenha());
-				//user.get().setVendedor(usuario.get());
-				return user;
+				user.get().setId(usuario.get().getId());
+                user.get().setTipo(usuario.get().getTipo());
+                user.get().setEmail(usuario.get().getEmail());
+               
+                return user;
 
 			}
 		}
 		return null;
 	}
+	
+	/*public Optional<Usuario> atualizarUsuario(Usuario usuario) {
+		if (repository.findById(usuario.getId()).isEmpty()) 
+			return null;
+		if (repository.findByUsuario(usuario.getUsuario()).isPresent())
+			return null;
+
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
+		String senhaEncoder = encoder.encode(usuario.getSenha());
+		usuario.setSenha(senhaEncoder);
+
+		return Optional.of(repository.save(usuario));
+	}*/
 
 }

@@ -2,6 +2,8 @@ package com.linkedreams.connectDreams.model;
 
 public class UsuarioLogin {
 	
+	private long id;
+	
 	private String nome_completo;
 	
 	private String email;
@@ -10,7 +12,7 @@ public class UsuarioLogin {
 	
 	private String token;
 	
-	private String vendedor;
+	private String tipo;
 
 
 	public String getNome_completo() {
@@ -45,13 +47,22 @@ public class UsuarioLogin {
 		this.token = token;
 	}
 
-	public String getVendedor() {
-		return vendedor;
+	public long getId() {
+		return id;
 	}
 
-	public void setVendedor(String vendedor) {
-		this.vendedor = vendedor;
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	} 
+	
 	
 	
 	

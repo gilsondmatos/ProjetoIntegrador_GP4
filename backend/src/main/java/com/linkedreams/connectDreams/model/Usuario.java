@@ -25,11 +25,10 @@ public class Usuario {
 	private long id;
 	
 	@NotNull
-	@Size (min = 5, max = 255)
+	@Size (min = 3, max = 255)
 	private String nome_completo;
 
 	@NotNull
-	@Size (min = 5, max = 255)
 	private String tipo;
 	
 	@NotNull
