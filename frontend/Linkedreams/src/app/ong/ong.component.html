@@ -22,7 +22,8 @@
         <div class="col-md-6">
           <h1 class="display-5 cor-texto">PLATAFORMA GRATUITA</h1>
           <h5 class="font-subtitulo align-items-center mb-4">Tanto ONGs quanto apoiadores conseguem utilizar nosso serviço gratuitamente!</h5>
-          <button type="button" class="btn btn-cor-botao">CADASTRAR MINHA ONG</button>
+          <button type="button" data-toggle= "modal"
+          data-target="#modal-cadastro " class="btn btn-cor-botao">CADASTRE-SE</button>
         </div>
       </div>
     </div>
@@ -84,6 +85,76 @@
             </a>
           </li>
         </ul>
+
+        <!-- modal Cadastro -->
+
+<div
+class="modal fade"
+id="modal-cadastro"
+tabindex="-1"
+role="dialog"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog" role="document">
+  <div class="modal-content justify-content-center">
+    <div class="modal-header justify-content-center">
+      <p class="text-center" id="exampleModalLabel">Cadastro</p>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="modal"
+        aria-label="Fechar"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="recipient-name" class="col-form-label"
+            >Nome completo</label
+          >
+          <input type="text" class="form-control" id="recipient-name" />
+        </div>
+
+        <div class="form-group">
+          <label for="recipient-name" class="col-form-label">E-mail</label>
+          <input type="text" class="form-control" id="recipient-name" />
+        </div>
+
+        <div class="form-group">
+          <label for="recipient-name" class="col-form-label">Senha</label>
+          <input type="password" class="form-control" id="recipient-name" />
+        </div>
+
+        <div class="form-group">
+          <label for="recipient-name" class="col-form-label"
+            >Confirmar Senha</label
+          >
+          <input type="password" class="form-control" id="recipient-name" />
+        </div>
+
+        <div class="form-group">
+          <label for="tipo">Tipo de Usuário:</label>
+          <select class="form-control" name="tipo" id="tipo">
+            <option>Selecione um tipo de usuário:</option>
+            <option value="normal">ONG</option>
+            <option value="adm">Apoiador</option>
+          </select>
+        </div>
+
+        <div class="d-flex justify-content-center">
+
+                      <button type="submit" class="btn btn-danger mr-4">Cancelar</button>
+                      <button type="submit" class="btn btn-success ">Cadastrar</button>
+                  </div>
+      </form>
+      
+    </div>
+  </div>
+</div>
+</div>
 
 
 
