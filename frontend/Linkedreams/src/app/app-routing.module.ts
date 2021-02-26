@@ -6,7 +6,7 @@ import { OngComponent } from './ong/ong.component';
 const routes: Routes = [
   {path:'',redirectTo:'inicio',pathMatch:'full'},
   {path:'inicio',component:InicioComponent},
-  {path:'ong',component:OngComponent}
+  {path:'faca-parte',component:OngComponent}
 
 ];
 
