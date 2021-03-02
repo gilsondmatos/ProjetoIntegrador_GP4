@@ -19,9 +19,7 @@ const routes: Routes = [
   {path:'faca-parte',component:OngComponent},
   {path:'cadastroProduto',component:CadastroProdutoComponent},
   {path:'contato', component: ContatoComponent},
-
   {path:'exibirProdutos',component:ExibirProdutosComponent},
-  {path:'produto-edit',component:ProdutoEditComponent},
   {path:'listaProdutos',component:ListaProdutosComponent},
   {path:'carrinho',component:CestaComprasComponent},
   {path:'quem-somos', component: QuemSomosComponent},

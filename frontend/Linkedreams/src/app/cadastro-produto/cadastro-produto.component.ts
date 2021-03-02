@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as $ from 'jquery';
+import { environment } from 'src/environments/environment.prod';
+import { Categoria } from '../Model/Categoria';
+import { CategoriaService } from '../service/categoria.service';
 
 @Component({
   selector: 'app-cadastro-produto',
@@ -8,7 +12,14 @@ import * as $ from 'jquery';
 })
 export class CadastroProdutoComponent implements OnInit {
 
-  constructor() { }
+  categoria: Categoria = new Categoria()
+  listaCategorias: Categoria[]
+  idCategoria: number
+
+  constructor(
+    private router: Router,
+    private categoriaService: CategoriaService
+  ) { }
 
   ngOnInit() {
     window.scroll(0,0)
@@ -18,7 +29,43 @@ export class CadastroProdutoComponent implements OnInit {
       $("#wrapper").toggleClass("toggled");
     });
 
+    if (environment.token == '') {
+      this.router.navigate(['/inicio'])
+    }
+
+    this.findAllCategorias()
           
   }
 
+  findAllCategorias(){
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
+    this.listaCategorias= resp
+    }) 
+  }
+
+  findByCategoria(){
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria)=>{
+    this.categoria= resp
+    }) 
+  }
+
+  cadastrar(){
+    this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
+    this.categoria=resp
+    alert('Categoria cadastrada com sucesso!') 
+    this.categoria=new Categoria()
+    this.findAllCategorias()
+    this.router.navigate(['/cadastroProduto'])
+    }) 
+  }
+
+  sair() {
+    this.router.navigate(['/inicio'])
+    environment.token = ''
+    environment.nome_completo = ''
+    environment.tipo = ''
+    environment.id = 0
+  }
+
 }
+

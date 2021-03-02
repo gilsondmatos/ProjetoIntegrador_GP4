@@ -9,8 +9,8 @@
           aria-hidden="true"></i> Lista de Produtos</a>
       <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-info-circle"
           aria-hidden="true"></i> Suporte técnico</a>
-      <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-sign-out"
-          aria-hidden="true"></i> Sair</a>
+      <a href="#" class="list-group-item list-group-item-action bg-light" (click)='sair()'><i class="fa fa-sign-out"
+          aria-hidden="true"  ></i> Sair</a>
     </div>
   </div>
   <!-- /#sidebar-wrapper -->
@@ -34,7 +34,7 @@
 
 
 
-          <div class="form-group mt-2 ">
+          <div class="form-group mt-3 ">
             <label for="nome">Nome:</label>
             <input class="form-control" type="text" name="nome" id="nome" placeholder="Digite o nome do produto">
           </div>
@@ -48,12 +48,9 @@
         <div class="col-md-5 color-secondary">
 
           <div class="form-group mt-2">
-            <label for="tipo">Tipo:</label>
-            <select class="form-control" name="tipo" id="tipo">
-              <option>Selecione um tipo:</option>
-              <option value="normal">Venda</option>
-              <option value="adm">Evento</option>
-              <option value="adm">Doação</option>
+            <label for="texto">Escolha uma categoria ou <a data-toggle="modal" data-target="#novaCategoria" class="titulo-destaque" >cadastre uma nova</a>: </label>
+            <select  class="form-control" [(ngModel)]='idCategoria' (change)='findByCategoria()' name="categoria" id="categoria">
+              <option *ngFor='let item of listaCategorias'>{{item.nome}}</option>
             </select>
           </div>
 
@@ -105,4 +102,30 @@
   </div>
   <!-- /#page-content-wrapper -->
 </div>
+
 <!-- /#wrapper -->
+
+<div class="modal fade" id="novaCategoria" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Nova Categoria</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input [(ngModel)]='categoria.nome' type="text" class="form-control" id="nome" placeholder="Digite o nome da categoria">
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" (click)='cadastrar()'>Cadastrar</button>
+      </div>
+    </div>
+  </div>
+</div>
