@@ -1,0 +1,36 @@
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .imagem-estatica {
+    object-fit:inherit;
+    height: 400px;
+     object-position: 20%;
+  }
+  
+  .fonte-titulo {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .background-texto-Plataforma {
+    background: #F1F9FF;
+  }
+  .cor-texto {
+    color: #2699FB;
+  }
+  .btn-cor-botao {
+    background: #2699FB;
+    color: white;
+  }
+  .cor-background-depoimentos{
+    background: #2699FB;
+  }
+  .card-largura {
+    max-width: 18rem;
+    max-height: 25rem;
+  }
+  .nav-item {
+    list-style-type: none;
+  }
+  
+  

@@ -16,6 +16,7 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
 
 import { ContatoComponent } from './contato/contato.component';
+import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 
 import { ExibirProdutosComponent } from './exibir-produtos/exibir-produtos.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
@@ -35,16 +36,13 @@ import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component
 
     OngComponent,
     CadastroProdutoComponent,
-
-    ListaProdutosComponent,
-
-
     ContatoComponent,
-
+    QuemSomosComponent,
+    ListaProdutosComponent,
+    ContatoComponent,
     ExibirProdutosComponent,
     ProdutoEditComponent
   ],
-  
   
   imports: [
     BrowserModule,

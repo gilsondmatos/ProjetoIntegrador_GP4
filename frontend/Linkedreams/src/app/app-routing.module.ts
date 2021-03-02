@@ -9,19 +9,18 @@ import { ExibirProdutosComponent } from './exibir-produtos/exibir-produtos.compo
 
 import { InicioComponent } from './inicio/inicio.component';
 import { OngComponent } from './ong/ong.component';
+import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'inicio',pathMatch:'full'},
   {path:'inicio',component:InicioComponent},
   {path:'faca-parte',component:OngComponent},
   {path:'cadastroProduto',component:CadastroProdutoComponent},
-
-  {path:'contato', component: ContatoComponent}
-
-
+  {path:'contato', component: ContatoComponent},
+  {path:'quem-somos', component: QuemSomosComponent},
+  {path:'contato', component: ContatoComponent},
   {path:'exibirProdutos',component:ExibirProdutosComponent},
   {path:'produto-edit',component:ProdutoEditComponent}
-
 ];
 
 @NgModule({
