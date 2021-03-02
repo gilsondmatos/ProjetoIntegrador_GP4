@@ -11,6 +11,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
 import { OngComponent } from './ong/ong.component';
 import { PagamentoComponent } from './pagamento/pagamento.component';
+import { CestaComprasComponent } from './cesta-compras/cesta-compras.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
 
@@ -29,6 +30,9 @@ import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component
     RodapeComponent,
     InicioComponent,
     PagamentoComponent,
+    CestaComprasComponent,
+    ],
+
     OngComponent,
     CadastroProdutoComponent,
 
@@ -39,9 +43,9 @@ import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component
 
     ExibirProdutosComponent,
     ProdutoEditComponent
-
-
   ],
+  
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
