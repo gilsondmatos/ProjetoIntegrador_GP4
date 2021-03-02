@@ -3,7 +3,10 @@ import { Router } from '@angular/router';
 import * as $ from 'jquery';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../Model/Categoria';
+import { Produto } from '../Model/Produto';
+import { User } from '../Model/User';
 import { CategoriaService } from '../service/categoria.service';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-cadastro-produto',
@@ -16,9 +19,16 @@ export class CadastroProdutoComponent implements OnInit {
   listaCategorias: Categoria[]
   idCategoria: number
 
+  produto: Produto = new Produto()
+  status: 
+
+  user: User = new User()
+  idUser= environment.id
+
   constructor(
     private router: Router,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private produtoService: ProdutoService
   ) { }
 
   ngOnInit() {
