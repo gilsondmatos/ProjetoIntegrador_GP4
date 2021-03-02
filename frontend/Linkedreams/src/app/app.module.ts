@@ -12,6 +12,8 @@ import { MenuComponent } from './menu/menu.component';
 import { OngComponent } from './ong/ong.component';
 import { PagamentoComponent } from './pagamento/pagamento.component';
 import { RodapeComponent } from './rodape/rodape.component';
+import { ExibirProdutosComponent } from './exibir-produtos/exibir-produtos.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 
 
 
@@ -23,7 +25,9 @@ import { RodapeComponent } from './rodape/rodape.component';
     InicioComponent,
     PagamentoComponent,
     OngComponent,
-    CadastroProdutoComponent
+    CadastroProdutoComponent,
+    ExibirProdutosComponent,
+    ProdutoEditComponent
   ],
   imports: [
     BrowserModule,
