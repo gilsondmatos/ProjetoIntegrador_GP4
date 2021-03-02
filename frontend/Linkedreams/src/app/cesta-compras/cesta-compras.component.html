@@ -1,100 +1,161 @@
 <div class="container-fluid">
     <div class = "container bg-navbar font-texto">
         <div class = "col-md-12">
-            <h1 class="d-flex text-align-center text-white">
+            <h1 class="text-white titulo text-center mb-5">
                <p href="#">Carrinho de compras</p></h1>
-                <h3 class="d-flex text-align-center text-white"><p href="#">Confirme os itens </p></h3>
-        </div>
-    
+                     </div>
 
+<div class="row bg-navbar2  d-flex align-items-center font-texto" id="planofundo">
+    <div class="container mb-5">
+      <h1 class="titulo text-center mb-5">Minhas Compras</h1>
+      
 
-    <div class="row bg-navbar2  d-flex align-items-center font-texto">
-        <div>
+      <div class="row d-flex  mt-3  ">
+        <div class="col-md-8 ">
 
-            <div class="form-row">
-                <div class="form-group col-md-12 font-texto">
-                    <div class="form-group col-md-3">
-                        <h3 class="panel-title">Evento</h3>
-                        <label for="inputEstado">Quantidade</label>
-                        <select id="inputEstado" class="form-control">
-                            <option>++</option>
-                          <option selected>6</option>
-                          <option selected>5</option>
-                          <option selected>4</option>
-                          <option selected>3</option>
-                          <option selected>2</option>
-                          <option selected>1</option>
-                         
-                        </select>
-                      </div>
-                      <div class="form-group col-md-3">
-                        <h3 class="panel-title">Doação</h3>
-                        <label for="inputEstado">Quantidade</label>
-                        <select id="inputEstado" class="form-control">
-                            <option>++</option>
-                            <option selected>6</option>
-                            <option selected>5</option>
-                            <option selected>4</option>
-                            <option selected>3</option>
-                            <option selected>2</option>
-                            <option selected>1</option>
-                        </select>
-                      </div>
-                      <div class="form-group col-md-3">
-                        <h3 class="panel-title">Produto</h3>
-                        <label for="inputEstado">Quantidade</label>
-                        <select id="inputEstado" class="form-control">
-                            <option>++</option>
-                            <option selected>6</option>
-                            <option selected>5</option>
-                            <option selected>4</option>
-                            <option selected>3</option>
-                            <option selected>2</option>
-                            <option selected>1</option>
-                        </select>
-                      </div>
-
-            <div class="row d-flex justify-content-center mt-3 mb-5">
-
+          <table class="table table-hover">
+            <thead class="font-texto ">
+              <tr>
                 
-                <div class="col-md-6">
+                <th scope="col"class="text-center">PRODUTO</th>
+                <th scope="col"class="text-center">DESCRIÇÃO</th>
+                <th scope="col"class="text-center">PREÇO</th>
+                <th scope="col"class="text-center">QUANTIDADE</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                
+                <td class="text-center">Calça</td>
+                <td class="text-center ">Evento </td>
+                <td class="text-center">R$ 75,00</td>
+                <td class="d-flex justify-content-center">
                     
-
-                </div>
-            </div>
+                    <div class="row justify-content-center col-md-3.5 ">
+                        <select id="inputEstado" class="form-control">
+                            <option selected>9</option> 
+                            <option selected>8</option> 
+                            <option selected>7</option>  
+                            <option selected>6</option>
+                             <option selected>5</option>
+                             <option selected>4</option>
+                             <option selected>3</option>
+                             <option selected>2</option>
+                             <option selected>1</option>
+                     </select>
+                     </div>
+                  
+                </td>
+                <td> </td>
+              </tr>
+              <tr>
+                
+                <td class="text-center">Caneca</td>
+                <td class="text-center">Evento</td>
+                <td class="text-center">R$ 10,00</td>
+                <td class="d-flex justify-content-center">
+                    
+                    <div class="row justify-content-center col-md-3.5">
+                           <select id="inputEstado" class="form-control">
+                            <option selected>9</option> 
+                            <option selected>8</option> 
+                            <option selected>7</option>  
+                            <option selected>6</option>
+                             <option selected>5</option>
+                             <option selected>4</option>
+                             <option selected>3</option>
+                             <option selected>2</option>
+                             <option selected>1</option>
+                        </select>
+                        </div>
+                </td>
+                
+              </tr>
+              <tr>
+                
+                <td class="text-center">Camisa</td>
+                <td class="text-center">Evento</td>
+                <td class="text-center">R$ 50,00</td>
+                <td class="d-flex justify-content-center">
+                    
+                    <div class="row justify-content-center col-md-3.5">
+                        <select id="inputEstado" class="form-control">
+                         
+                        <option selected>9</option> 
+                        <option selected>8</option> 
+                        <option selected>7</option>  
+                        <option selected>6</option>
+                         <option selected>5</option>
+                         <option selected>4</option>
+                         <option selected>3</option>
+                         <option selected>2</option>
+                         <option selected>1</option>
+                     </select>
+                     </div>
+                  
+                </td>
+               
+              </tr>
+            
+            </tbody>
+          </table>
 
         </div>
+    <div class="col-md-4">
 
-
-        <div class="col-md-6 d-flex justify-content-right">
-            <div class="panel panel-primary">
-                <div id="divTotal" class="panel-heading">
-                    <h3 class="panel-title">Total</h3>
-                </div>
-                <div class="panel-body">
-                    <h3>R$ 100</h3>
-                </div>
+        <div class="panel panel-primary">
+            <div id="divTotal" class="panel-heading">
+                <h3 class="panel-title">Total</h3>
             </div>
-            
-        </div>
+            <div class="panel-body">
+                <h3>R$ 135</h3>
 
-        <div class="modal-footer col-md-12">
-            <button class="btn btn-primary mr-2" data-toggle="modal" data-target="#pagamento">Confirmar </button>
-            
+                 </div>
+                 <div class="row d-flex justify-content-left">
+                    <div >
+                      
+                          <div class="card-body">
+                          <h5 id="fonte_titulo" class="card-title font-weight-bold texto text-center"></h5>
+                          <p id="fonte" class="card-text text-justify">
+                            
+                          </p>
+                          <p class="text-capitalize text-center"></p>
+                          <p class="font-weight-bold texto text-center">
+                          </p>
+          
+                         
+          
+                         
+                          <div class="row mb-3 d-flex justify-content-center texto">
+                              <button class="btn btn-primary mr-2" data-toggle="modal" data-target="#Pagamento">Pagamento </button>
+                              <a routerLink ="/inicio"class="btn btn-laranja-cancelar text-primary ml-4">Voltar</a>
+                          </div>
+        
+        
+        
+                          
+        
+                        </div>
+                      
+                    </div>
                   </div>
 
-        <div col-md-12>
-            <button class="btn btn-primary mr-2" data-toggle="modal" data-target="#inicio">Voltar </button>
 
-        </div>
+
+            </div>
+
 
         
-    </div>
-    
 
-</div>
 
-<div class="col-md-6 d-flex justify-content-center">
-            <img src="https://i.imgur.com/Kf8E6UN.png" alt="" width="500px" height="500px">
-        </div>
     </div>
+
+
+
+      </div>
+
+
+        
+      </div>
+  </div>
