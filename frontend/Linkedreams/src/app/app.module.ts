@@ -13,6 +13,7 @@ import { OngComponent } from './ong/ong.component';
 import { PagamentoComponent } from './pagamento/pagamento.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { ContatoComponent } from './contato/contato.component';
+import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 
 
 
@@ -25,7 +26,8 @@ import { ContatoComponent } from './contato/contato.component';
     PagamentoComponent,
     OngComponent,
     CadastroProdutoComponent,
-    ContatoComponent
+    ContatoComponent,
+    QuemSomosComponent
   ],
   imports: [
     BrowserModule,
