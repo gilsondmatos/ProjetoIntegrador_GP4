@@ -14,6 +14,12 @@ import { PagamentoComponent } from './pagamento/pagamento.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
 
+import { ContatoComponent } from './contato/contato.component';
+
+import { ExibirProdutosComponent } from './exibir-produtos/exibir-produtos.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+
+
 
 
 @NgModule({
@@ -25,7 +31,16 @@ import { ListaProdutosComponent } from './lista-produtos/lista-produtos.componen
     PagamentoComponent,
     OngComponent,
     CadastroProdutoComponent,
-    ListaProdutosComponent
+
+    ListaProdutosComponent,
+
+
+    ContatoComponent,
+
+    ExibirProdutosComponent,
+    ProdutoEditComponent
+
+
   ],
   imports: [
     BrowserModule,
