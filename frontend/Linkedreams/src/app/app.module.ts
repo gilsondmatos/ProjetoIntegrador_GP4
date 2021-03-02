@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { PagamentoComponent } from './pagamento/pagamento.component';
+import { CestaComprasComponent } from './cesta-compras/cesta-compras.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { PagamentoComponent } from './pagamento/pagamento.component';
     MenuComponent,
     RodapeComponent,
     PagamentoComponent,
+    CestaComprasComponent,
     ],
   imports: [
     BrowserModule,
