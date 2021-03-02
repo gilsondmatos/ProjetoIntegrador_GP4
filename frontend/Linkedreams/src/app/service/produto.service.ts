@@ -22,10 +22,10 @@ export class ProdutoService {
   }
 
   getByIdProduto(id: number): Observable<Produto>{
-    return this.http.get<Produto>(`http://localhost:8080/postagens/${id}`, this.token)
+    return this.http.get<Produto>(`http://localhost:8080/produtos/${id}`, this.token)
   }
 
-  postPProduto(produto: Produto) : Observable<Produto>{
+  postProduto(produto: Produto) : Observable<Produto>{
     return this.http.post<Produto>('http://localhost:8080/produtos', produto, this.token)
   }
 

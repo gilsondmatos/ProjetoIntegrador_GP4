@@ -43,39 +43,33 @@
             <input [(ngModel)]='produto.preco' class="form-control" type="text" name="valor" id="valor" placeholder="Digite o valor do produto">
           </div>
 
-
         </div>
         <div class="col-md-5 color-secondary">
-
           <div class="form-group mt-2">
             <label for="texto">Escolha uma categoria ou <a data-toggle="modal" data-target="#novaCategoria" class="titulo-destaque" >cadastre uma nova</a>: </label>
             <select  class="form-control" [(ngModel)]='idCategoria' (change)='findByCategoria()' name="categoria" id="categoria">
               <option *ngFor='let item of listaCategorias'>{{item.nome}}</option>
             </select>
           </div>
-
-          <div class="form-group">
-            <legend class="col-form-label ">Status:</legend>
-            <div class="row" (change)='tipoStatus($event)' >
-              <div class=" form-check ml-3">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="opcao1" checked>
-                <label class="form-check-label" for="exampleRadios1">
-                  Ativado
-                </label>
-              </div>
-              <div class="form-check ml-2">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="opcao2">
-                <label class="form-check-label" for="exampleRadios2">
-                  Desativado
-                </label>
-              </div>
-            </div>
-           
+          <div class="form-group">  
+            <label for="usuario">Causa:</label>
+            <input [(ngModel)]='produto.causa' class="form-control" type="text" name="causa" id="causa" placeholder="Digite a causa do produto">
           </div>
-
-
         </div>
       </div>
+
+      <div class="row d-flex justify-content-center color-texto">
+        <div class="col-md-10 color-secondary">
+          <div class="form-group">
+            <label for="tipo">Status do Produto:</label>
+            <select class="form-control" name="status" id="status" (change)=' tipoStatus($event)'>
+                <option value=1>Ativado</option>
+                <option value=0>Desativado</option>
+            </select>
+        </div>
+        </div>
+      </div>
+
       <div class="row d-flex justify-content-center color-texto">
         <div class="col-md-10 color-secondary">
           <div class="form-group">
@@ -90,7 +84,7 @@
           <div class="d-flex justify-content-center mb-2">
 
             <button type="submit" class="btn btn-secondary text-white mr-4">Cancelar</button>
-            <button type="submit" class="btn color-principal text-white">Cadastrar</button>
+            <button type="submit" class="btn color-principal text-white" (click)='cadastrarProduto()' >Cadastrar</button>
           </div>
 
         </div>

@@ -20,7 +20,7 @@ export class CadastroProdutoComponent implements OnInit {
   idCategoria: number
 
   produto: Produto = new Produto()
-  status: 
+  status: boolean
 
   user: User = new User()
   idUser= environment.id
@@ -75,6 +75,35 @@ export class CadastroProdutoComponent implements OnInit {
     environment.nome_completo = ''
     environment.tipo = ''
     environment.id = 0
+  }
+
+  tipoStatus(event: any){
+    this.status=event.target.value
+  }
+
+  cadastrarProduto(){
+    console.log(environment.id)
+    console.log(this.produto.nome)
+    console.log(this.produto.status)
+    console.log(this.produto.causa)
+    console.log(this.produto.descricao)
+    console.log(this.produto.categoria)
+    console.log(this.produto.usuario)
+    console.log(this.produto.preco)
+
+    this.produto.status=this.status
+    this.categoria.id=this.idCategoria
+    this.produto.categoria=this.categoria
+    this.user.id=this.idUser
+    this.produto.usuario=this.user
+    this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
+    this.produto=resp
+    alert ('Produto cadastrado com sucesso!')
+    this.produto= new Produto()  
+    this.router.navigate(['/listaProdutos'])
+    })
+
+
   }
 
 }
