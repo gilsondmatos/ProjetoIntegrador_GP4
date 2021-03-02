@@ -12,6 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { OngComponent } from './ong/ong.component';
 import { PagamentoComponent } from './pagamento/pagamento.component';
 import { RodapeComponent } from './rodape/rodape.component';
+import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
 
 import { ContatoComponent } from './contato/contato.component';
 
@@ -31,10 +32,14 @@ import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component
     OngComponent,
     CadastroProdutoComponent,
 
-    ContatoComponent
+    ListaProdutosComponent,
+
+
+    ContatoComponent,
 
     ExibirProdutosComponent,
     ProdutoEditComponent
+
 
   ],
   imports: [
