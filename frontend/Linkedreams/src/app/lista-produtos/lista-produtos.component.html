@@ -8,266 +8,52 @@
 
       <h5 class="">Transformando sonhos em realidade</h5>
       <br />
-      <h3 >COLABORE</h3>
+      <h3>COLABORE</h3>
       <br />
       <!-- Exemplo de único botão danger -->
-<div class="btn-group  ">
-  <button type="button" class="btn btn-outline-primary dropdown-toggle mr-5 mb-5 " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    ONGs
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Fundação terra </a>
-    <a class="dropdown-item" href="#">Amigos do bem </a>
-    <a class="dropdown-item" href="#">karol conKa</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Link separado</a>
-  </div>
-  <div>
-  <button type="button" class="btn btn-outline-primary dropdown-toggle  mb-5 " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Causa
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">lei de causa e efeito </a>
-    <a class="dropdown-item" href="#">judicial</a>
-    <a class="dropdown-item" href="#">Alguma coisa aqui</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Link separado</a>
-  </div></div>
+      <div class="btn-group  ">
+        <button type="button" class="btn btn-outline-primary dropdown-toggle mr-5 mb-5 " data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          ONGs
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Fundação terra </a>
+          <a class="dropdown-item" href="#">Amigos do bem </a>
+          <a class="dropdown-item" href="#">karol conKa</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Link separado</a>
+        </div>
+        <div>
+          <button type="button" class="btn btn-outline-primary dropdown-toggle  mb-5 " data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Causa
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">lei de causa e efeito </a>
+            <a class="dropdown-item" href="#">judicial</a>
+            <a class="dropdown-item" href="#">Alguma coisa aqui</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Link separado</a>
+          </div>
+        </div>
 
-</div>
+      </div>
     </div>
   </div>
-  <br />
+  
   <!-- /titulo do sete  -->
 
   <!-- card dos produtos  -->
-
-  <div class="card-deck">
-    <div class="card">
-      <img
-        class="card-img-top"
-        src="../../assets/img/carde de produto 1.jpg"
-        alt=""
-      />
-      <div class="card-body card-color">
-        <p class="card-text">
-          Este é um card maior com suporte a texto embaixo, que funciona como
-          uma introdução a um conteúdo adicional. Este card tem o conteúdo ainda
-          maior que o primeiro, para mostrar a altura igual, em ação..
-        </p>
-        <h5 class="card-title d-flex justify-content-center mb-5 mr-3">
-          R$ 40
-        </h5>
-      </div>
-      <div class="d-flex justify-content-center card-color">
-        <button type="button" class="btn btn-outline-primary text-center mb-3">
-          Comprar
-        </button>
+  <div class="card-columns">
+    <div class="card text-center" *ngFor='let item of listaProdutos'>
+      <img src={{item.imagem}} class="card-img-top" alt="Foto cardapio brigadeiro">
+      <div class="card-body">
+        <h5 class="card-title">{{item.nome}}</h5>
+        <p class="card-text">{{item.descricao}}</p>
+        <p class="card-text">R$ {{item.preco}}</p>
+        <button type="submit" class="btn color-principal text-white">Comprar</button>
+        
       </div>
     </div>
-
-    <div class="card">
-      <img
-        class="card-img-top"
-        src="../../assets/img/carde de produto 1.jpg"
-        alt="Imagem de capa do card"
-      />
-      <div class="card-body card-color">
-        <p class="card-text">
-          Este é um card maior com suporte a texto embaixo, que funciona como
-          uma introdução a um conteúdo adicional. Este card tem o conteúdo ainda
-          maior que o primeiro, para mostrar a altura igual, em ação.
-        </p>
-        <h5 class="card-title d-flex justify-content-center mb-5 mr-3">
-          R$ 40
-        </h5>
-      </div>
-      <div class="d-flex justify-content-center card-color">
-        <button type="button" class="btn btn-outline-primary text-center mb-3">
-          Comprar
-        </button>
-      </div>
-    </div>
-
-    <div class="card">
-      <img
-        class="card-img-top"
-        src="../../assets/img/carde de produto 1.jpg"
-        alt="Imagem de capa do card"
-      />
-      <div class="card-body card-color">
-        <p class="card-text">
-          Este é um card maior com suporte a texto embaixo, que funciona como
-          uma introdução a um conteúdo adicional. Este card tem o conteúdo ainda
-          maior que o primeiro, para mostrar a altura igual, em ação.
-        </p>
-        <h5 class="card-title d-flex justify-content-center mb-5 mr-3">
-          R$ 40
-        </h5>
-      </div>
-      <div class="d-flex justify-content-center card-color">
-        <button type="button" class="btn btn-outline-primary text-center mb-3">
-          Comprar
-        </button>
-      </div>
-    </div>
-    <br />
   </div>
-  <br />
-  <!-- segundo carde -->
-  <div class="card-deck">
-    <div class="card">
-      <img
-        class="card-img-top"
-        src="../../assets/img/carde de produto 2.jpg"
-        alt=""
-      />
-      <div class="card-body card-color">
-        <p class="card-text">
-          Este é um card maior com suporte a texto embaixo, que funciona como
-          uma introdução a um conteúdo adicional. Este card tem o conteúdo ainda
-          maior que o primeiro, para mostrar a altura igual, em ação..
-        </p>
-        <h5 class="card-title d-flex justify-content-center mb-5 mr-3">
-          Evento Gratuito
-        </h5>
-      </div>
-      <div class="d-flex justify-content-center card-color">
-        <button type="button" class="btn btn-outline-primary text-center mb-3">
-          Comprar
-        </button>
-      </div>
-    </div>
-
-    <div class="card">
-      <img
-        class="card-img-top"
-        src="../../assets/img/carde de produto 2.jpg"
-        alt="Imagem de capa do card"
-      />
-      <div class="card-body card-color">
-        <p class="card-text">
-          Este é um card maior com suporte a texto embaixo, que funciona como
-          uma introdução a um conteúdo adicional. Este card tem o conteúdo ainda
-          maior que o primeiro, para mostrar a altura igual, em ação.
-        </p>
-        <h5 class="card-title d-flex justify-content-center mb-5 mr-3">
-          Evento Gratuito
-        </h5>
-      </div>
-      <div class="d-flex justify-content-center card-color">
-        <button type="button" class="btn btn-outline-primary text-center mb-3">
-          Comprar
-        </button>
-      </div>
-    </div>
-
-    <div class="card">
-      <img
-        class="card-img-top"
-        src="../../assets/img/carde de produto 2.jpg"
-        alt="Imagem de capa do card"
-      />
-      <div class="card-body card-color">
-        <p class="card-text">
-          Este é um card maior com suporte a texto embaixo, que funciona como
-          uma introdução a um conteúdo adicional. Este card tem o conteúdo ainda
-          maior que o primeiro, para mostrar a altura igual, em ação.
-        </p>
-        <h5 class="card-title d-flex justify-content-center mb-5 mr-3">
-          Evento Gratuito
-        </h5>
-      </div>
-      <div class="d-flex justify-content-center card-color">
-        <button type="button" class="btn btn-outline-primary text-center mb-3">
-          Comprar
-        </button>
-      </div>
-    </div>
-    <br />
-  </div>
-  <br />
-  <!-- /segundo carde -->
-
-  <!-- terceiro carde -->
-  <div class="card-deck">
-    <div class="card">
-      <img
-        class="card-img-top"
-        src="../../assets/img/carde de produto 3.jpg"
-        alt=""
-      />
-      <div class="card-body card-color">
-        <p class="card-text">
-          Este é um card maior com suporte a texto embaixo, que funciona como
-          uma introdução a um conteúdo adicional. Este card tem o conteúdo ainda
-          maior que o primeiro, para mostrar a altura igual, em ação..
-        </p>
-        <h5 class="card-title d-flex justify-content-center mb-5 mr-3">
-          R$ 200
-        </h5>
-      </div>
-      <div class="d-flex justify-content-center card-color">
-        <button type="button" class="btn btn-outline-primary text-center mb-3">
-          Comprar
-        </button>
-      </div>
-    </div>
-
-    <div class="card">
-      <img
-        class="card-img-top"
-        src="../../assets/img/carde de produto 3.jpg"
-        alt="Imagem de capa do card"
-      />
-      <div class="card-body card-color">
-        <p class="card-text">
-          Este é um card maior com suporte a texto embaixo, que funciona como
-          uma introdução a um conteúdo adicional. Este card tem o conteúdo ainda
-          maior que o primeiro, para mostrar a altura igual, em ação.
-        </p>
-        <h5 class="card-title d-flex justify-content-center mb-5 mr-3">
-          R$ 200
-        </h5>
-      </div>
-      <div class="d-flex justify-content-center card-color">
-        <button type="button" class="btn btn-outline-primary text-center mb-3">
-          Comprar
-        </button>
-      </div>
-    </div>
-
-    <div class="card">
-      <img
-        class="card-img-top"
-        src="../../assets/img/carde de produto 3.jpg"
-        alt="Imagem de capa do card"
-      />
-      <div class="card-body card-color">
-        <p class="card-text">
-          Este é um card maior com suporte a texto embaixo, que funciona como
-          uma introdução a um conteúdo adicional. Este card tem o conteúdo ainda
-          maior que o primeiro, para mostrar a altura igual, em ação.
-        </p>
-        <h5 class="card-title d-flex justify-content-center mb-5 mr-3">
-          R$ 200
-        </h5>
-      </div>
-      <div class="d-flex justify-content-center card-color">
-        <button type="button" class="btn btn-outline-primary text-center mb-3">
-          Comprar
-        </button>
-      </div>
-    </div>
-    <br />
-  </div>
-
-  <!-- /terceiro carde -->
-
-  <br />
-  <div class="d-flex justify-content-end">
-    <button class="btn btn-primary mb-5">VEJA MAIS</button>
-  </div>
-</div>
-
 <!-- /card dos produtos  -->

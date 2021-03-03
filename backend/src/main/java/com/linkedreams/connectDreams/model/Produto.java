@@ -40,6 +40,10 @@ public class Produto {
 	@NotNull
 	private boolean status;
 	
+	@NotNull
+	@Size (min = 4, max = 255)
+	private String causa;
+
 	@ManyToOne
     @JsonIgnoreProperties("produto")
 	private Categoria categoria;
@@ -94,6 +98,14 @@ public class Produto {
 
 	public void setStatus(boolean status) {
 		this.status = status;
+	}
+
+	public String getCausa() {
+		return causa;
+	}
+
+	public void setCausa(String causa) {
+		this.causa = causa;
 	}
 
 	public Categoria getCategoria() {

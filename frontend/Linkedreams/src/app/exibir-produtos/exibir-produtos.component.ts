@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as $ from 'jquery';
+import { environment } from 'src/environments/environment.prod';
+import { Produto } from '../Model/Produto';
+import { User } from '../Model/User';
+import { AuthService } from '../service/auth.service';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-exibir-produtos',
@@ -7,8 +13,22 @@ import * as $ from 'jquery';
   styleUrls: ['./exibir-produtos.component.css']
 })
 export class ExibirProdutosComponent implements OnInit {
+  
+  produto: Produto = new Produto()
+  idProduto: number
+  listaProdutos : Produto []
 
-  constructor() { }
+  user: User = new User()
+  idUser= environment.id
+  escreveON: string
+
+  constructor(
+    private authService:AuthService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private produtoService: ProdutoService
+
+  ) { }
 
   ngOnInit() {
     window.scroll(0,0)
@@ -17,6 +37,48 @@ export class ExibirProdutosComponent implements OnInit {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
+
+    if (environment.token == '') {
+      this.router.navigate(['/inicio'])
+    }
+
+    this.findByIdUser()
+    this.idProduto
+    
+  }
+
+  analisaStatus(status: boolean){
+    if(status==true){
+      this.escreveON="Ativado"
+    }else{
+      this.escreveON="Desativado"
+    }
+    return this.escreveON
+  }
+
+  findByIdUser(){
+    this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
+      this.user = resp
+    })
+  }
+
+  findByIdProduto(id:number){
+    this.produtoService.getByIdProduto(id).subscribe((resp: Produto)=>{
+      this.produto=resp
+    })
+  }
+
+  enviarIdProduto(id: number){
+    this.idProduto=id
+    this.findByIdProduto(this.idProduto)
+  }
+
+  apagar(){
+    this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
+      alert ('Produto apagado com sucesso!')
+      this.findByIdUser()    
+      this.router.navigate(['/exibirProdutos'])
+    })
   }
 
 }

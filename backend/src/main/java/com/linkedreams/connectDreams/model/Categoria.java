@@ -30,9 +30,6 @@ public class Categoria {
 	private String nome;
 	
 	
-	@NotNull
-	@Size (min = 4, max = 255)
-	private String causa;
 
 	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("categoria")
@@ -54,14 +51,7 @@ public class Categoria {
 		this.nome = nome;
 	}
 
-	public String getCausa() {
-		return causa;
-	}
-
-	public void setCausa(String causa) {
-		this.causa = causa;
-	}
-
+	
 	public List<Produto> getProduto() {
 		return produto;
 	}
