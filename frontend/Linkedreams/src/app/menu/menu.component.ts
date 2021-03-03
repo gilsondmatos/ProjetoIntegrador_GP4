@@ -33,8 +33,12 @@ export class MenuComponent implements OnInit {
       console.log(environment.tipo)
 
       console.log(environment.token)
-
-      this.router.navigate(["/cadastroProduto"])
+      if(environment.tipo=='ONG'){
+        this.router.navigate(["/cadastroProduto"])
+      }else{
+        this.router.navigate(["/listaProdutos"])
+      }
+      
     },error=>{
       if(error.status==500){
         alert('Usuário ou senha estão incorretos')

@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as $ from 'jquery';
+import { environment } from 'src/environments/environment.prod';
+import { Produto } from '../Model/Produto';
+import { User } from '../Model/User';
+import { AuthService } from '../service/auth.service';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-exibir-produtos',
@@ -7,8 +13,15 @@ import * as $ from 'jquery';
   styleUrls: ['./exibir-produtos.component.css']
 })
 export class ExibirProdutosComponent implements OnInit {
+  
+  listaProdutos : Produto []
+  user: User = new User()
+  idUser= environment.id
 
-  constructor() { }
+  constructor(
+    private authService:AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     window.scroll(0,0)
@@ -17,6 +30,19 @@ export class ExibirProdutosComponent implements OnInit {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
+
+    if (environment.token == '') {
+      this.router.navigate(['/inicio'])
+    }
+
+    this.findByIdUser()
+    
+  }
+
+  findByIdUser(){
+    this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
+      this.user = resp
+    })
   }
 
 }

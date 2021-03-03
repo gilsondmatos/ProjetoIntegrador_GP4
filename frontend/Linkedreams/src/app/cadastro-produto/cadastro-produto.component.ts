@@ -90,10 +90,13 @@ export class CadastroProdutoComponent implements OnInit {
     console.log(this.produto.categoria)
     console.log(this.produto.usuario)
     console.log(this.produto.preco)
+    console.log(this.idCategoria)
 
     this.produto.status=this.status
+    
     this.categoria.id=this.idCategoria
     this.produto.categoria=this.categoria
+
     this.user.id=this.idUser
     this.produto.usuario=this.user
     
@@ -101,7 +104,7 @@ export class CadastroProdutoComponent implements OnInit {
     this.produto=resp
     alert ('Produto cadastrado com sucesso!')
     this.produto= new Produto()  
-    this.router.navigate(['/listaProdutos'])
+    this.router.navigate(['/exibirProdutos'])
     })
 
 
