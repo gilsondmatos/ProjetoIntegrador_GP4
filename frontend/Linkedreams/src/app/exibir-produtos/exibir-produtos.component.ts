@@ -17,6 +17,7 @@ export class ExibirProdutosComponent implements OnInit {
   listaProdutos : Produto []
   user: User = new User()
   idUser= environment.id
+  escreveON: string
 
   constructor(
     private authService:AuthService,
@@ -37,6 +38,15 @@ export class ExibirProdutosComponent implements OnInit {
 
     this.findByIdUser()
     
+  }
+
+  analisaStatus(status: boolean){
+    if(status==true){
+      this.escreveON="Ativado"
+    }else{
+      this.escreveON="Desativado"
+    }
+    return this.escreveON
   }
 
   findByIdUser(){

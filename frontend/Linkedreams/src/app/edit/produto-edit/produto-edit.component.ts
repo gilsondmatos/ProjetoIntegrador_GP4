@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/Model/Categoria';
 import { Produto } from 'src/app/Model/Produto';
 import { User } from 'src/app/Model/User';
@@ -14,20 +14,19 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class ProdutoEditComponent implements OnInit {
   
-  categoria: Categoria = new Categoria()
-  listaCategorias: Categoria[]
-  idCategoria: number
-
   produto: Produto = new Produto()
-  status: boolean
 
-  user: User = new User()
-  idUser= environment.id
+  categoria: Categoria=new Categoria()
+  idCategoria: number
+  listaCategorias : Categoria[]
+  
+  status: boolean
 
   constructor(
     private router: Router,
-    private categoriaService: CategoriaService,
-    private produtoService: ProdutoService
+    private route: ActivatedRoute,
+    private produtoService: ProdutoService,
+    private categoriaService: CategoriaService
   ) { }
 
   ngOnInit(){
@@ -37,13 +36,45 @@ export class ProdutoEditComponent implements OnInit {
       this.router.navigate(['/inicio'])
     }
 
+    let id=this.route.snapshot.params['id']
+    this.findByIdProduto(id)
+    this.findAllCategorias()
   }
 
+  findByIdProduto(id:number){
+    this.produtoService.getByIdProduto(id).subscribe((resp: Produto)=>{
+      this.produto=resp
+    })
+  }
+
+  findAllCategorias(){
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
+    this.listaCategorias= resp
+    }) 
+  }
   findByCategoria(){
     this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria)=>{
     this.categoria= resp
     }) 
   }
-  
+
+  tipoStatus(event: any){
+    this.status=event.target.value
+  }
+
+  atualizar(){
+    this.produto.status=this.status
+    
+    this.categoria.id=this.idCategoria
+    this.produto.categoria=this.categoria
+
+    this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
+      this.produto=resp
+      alert ('Produto atualizado com sucesso!')
+      this.router.navigate(['/exibirProdutos'])
+    })
+
+
+  }
 
 }
