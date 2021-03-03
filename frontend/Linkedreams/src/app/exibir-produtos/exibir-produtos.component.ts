@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as $ from 'jquery';
 import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../Model/Produto';
@@ -14,14 +14,20 @@ import { ProdutoService } from '../service/produto.service';
 })
 export class ExibirProdutosComponent implements OnInit {
   
+  produto: Produto = new Produto()
+  idProduto: number
   listaProdutos : Produto []
+
   user: User = new User()
   idUser= environment.id
   escreveON: string
 
   constructor(
     private authService:AuthService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
+    private produtoService: ProdutoService
+
   ) { }
 
   ngOnInit() {
@@ -37,6 +43,7 @@ export class ExibirProdutosComponent implements OnInit {
     }
 
     this.findByIdUser()
+    this.idProduto
     
   }
 
@@ -52,6 +59,25 @@ export class ExibirProdutosComponent implements OnInit {
   findByIdUser(){
     this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
       this.user = resp
+    })
+  }
+
+  findByIdProduto(id:number){
+    this.produtoService.getByIdProduto(id).subscribe((resp: Produto)=>{
+      this.produto=resp
+    })
+  }
+
+  enviarIdProduto(id: number){
+    this.idProduto=id
+    this.findByIdProduto(this.idProduto)
+  }
+
+  apagar(){
+    this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
+      alert ('Produto apagado com sucesso!')
+      this.findByIdUser()    
+      this.router.navigate(['/exibirProdutos'])
     })
   }
 

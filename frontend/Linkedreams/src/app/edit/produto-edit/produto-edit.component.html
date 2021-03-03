@@ -22,7 +22,7 @@
     </div>
     <div class="col-md-5 color-secondary">
       <div class="form-group mt-2">
-        <label for="texto">Escolha uma categoria ou <a data-toggle="modal" data-target="#novaCategoria" class="titulo-destaque" >cadastre uma nova</a>: </label>
+        <label for="texto">Escolha uma categoria : </label>
         <select  class="form-control" [(ngModel)]='idCategoria' (change)='findByCategoria()' name="categoria" id="categoria">
           <option *ngFor='let item of listaCategorias' value="{{item.id}}" >{{item.nome}}</option>
         </select>

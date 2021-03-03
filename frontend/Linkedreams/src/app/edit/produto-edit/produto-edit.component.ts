@@ -73,8 +73,6 @@ export class ProdutoEditComponent implements OnInit {
       alert ('Produto atualizado com sucesso!')
       this.router.navigate(['/exibirProdutos'])
     })
-
-
   }
 
 }
