@@ -62,9 +62,9 @@
         <div class="col-md-10 color-secondary">
           <div class="form-group">
             <label for="tipo">Status do Produto:</label>
-            <select class="form-control" name="status" id="status" (change)=' tipoStatus($event)'>
-                <option value=1>Ativado</option>
-                <option value=0>Desativado</option>
+            <select class="form-control" name="status" id="status" [(ngModel)]='status' (change)='tipoStatus($event)'>
+                <option value=true>Ativado</option>
+                <option value=false>Desativado</option>
             </select>
         </div>
         </div>

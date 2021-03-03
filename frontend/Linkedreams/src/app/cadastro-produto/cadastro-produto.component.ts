@@ -96,6 +96,7 @@ export class CadastroProdutoComponent implements OnInit {
     this.produto.categoria=this.categoria
     this.user.id=this.idUser
     this.produto.usuario=this.user
+    
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
     this.produto=resp
     alert ('Produto cadastrado com sucesso!')
