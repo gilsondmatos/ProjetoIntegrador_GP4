@@ -10,6 +10,7 @@ body {
 
 .fonte-titulo {
   font-family: 'Roboto', sans-serif;
+  font-weight: 900;
 }
 
 .background-texto-Plataforma {
@@ -17,6 +18,7 @@ body {
 }
 .cor-texto {
   color: #2699FB;
+  font-weight: 800;
 }
 .btn-cor-botao {
   background: #2699FB;
@@ -31,5 +33,17 @@ body {
 }
 .nav-item {
   list-style-type: none;
+}
+.font-subtitulo {
+  font-size: 16pt;
+}
+.style-botao {
+  font-size: 16pt;
+  font-weight: 700;
+}
+.text-depoimento {
+   font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  color: white;
 }
 
