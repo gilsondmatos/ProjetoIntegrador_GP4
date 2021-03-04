@@ -12,6 +12,16 @@
       <br />
       <!-- Exemplo de único botão danger -->
       <div class="btn-group  ">
+
+        <div class="row d-flex justify-content-center mb-5 mt-5" >
+          <div class="col-md-4">
+            <div class="form-group">
+              <input type="text" class="form-control" id="nomeProduto" placeholder="Digite o nome de um produto 
+              para pesquisar" [(ngModel)]='nomeProduto' (keyup)='findByNomeProduto()'>
+            </div>
+          </div>
+        </div>
+<!-- 
         <button type="button" class="btn btn-outline-primary dropdown-toggle mr-5 mb-5 " data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           ONGs
@@ -35,7 +45,7 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Link separado</a>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>
