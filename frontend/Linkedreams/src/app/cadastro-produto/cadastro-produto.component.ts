@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../Model/Categoria';
 import { Produto } from '../Model/Produto';
 import { User } from '../Model/User';
+import { AlertasService } from '../service/alertas.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -28,7 +29,8 @@ export class CadastroProdutoComponent implements OnInit {
   constructor(
     private router: Router,
     private categoriaService: CategoriaService,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -62,7 +64,7 @@ export class CadastroProdutoComponent implements OnInit {
   cadastrar(){
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
     this.categoria=resp
-    alert('Categoria cadastrada com sucesso!') 
+    this.alertas.showAlertSuccess('Categoria cadastrada com sucesso!') 
     this.categoria=new Categoria()
     this.findAllCategorias()
     this.router.navigate(['/cadastroProduto'])
@@ -102,7 +104,7 @@ export class CadastroProdutoComponent implements OnInit {
     
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
     this.produto=resp
-    alert ('Produto cadastrado com sucesso!')
+    this.alertas.showAlertSuccess('Produto cadastrado com sucesso!')
     this.produto= new Produto()  
     this.router.navigate(['/exibirProdutos'])
     })
