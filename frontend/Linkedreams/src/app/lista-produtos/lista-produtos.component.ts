@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Categoria } from '../Model/Categoria';
 import { Produto } from '../Model/Produto';
+import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -10,19 +12,31 @@ import { ProdutoService } from '../service/produto.service';
 export class ListaProdutosComponent implements OnInit {
 
   listaProdutos: Produto[]
+  nomeProduto: string
 
   constructor(
     private produtoService:ProdutoService,
+    private categoriaService: CategoriaService
   ) { }
 
   ngOnInit(){
     window.scroll(0,0)
-    this.getAllProdutos()  
+    this.getAllProdutos() 
   }
 
   getAllProdutos(){
     this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
       this.listaProdutos=resp
     })
+  }
+
+  findByNomeProduto(){
+   if(this.nomeProduto==''){
+      this.getAllProdutos()
+    }else{
+      this.produtoService.getByNomeProduto(this.nomeProduto).subscribe((resp: Produto[])=>{
+        this.listaProdutos = resp
+      })
+    }
   }
 }

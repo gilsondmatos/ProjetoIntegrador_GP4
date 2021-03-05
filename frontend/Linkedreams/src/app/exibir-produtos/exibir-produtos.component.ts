@@ -4,6 +4,7 @@ import * as $ from 'jquery';
 import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../Model/Produto';
 import { User } from '../Model/User';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -26,7 +27,8 @@ export class ExibirProdutosComponent implements OnInit {
     private authService:AuthService,
     private router: Router,
     private route: ActivatedRoute,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private alertas: AlertasService
 
   ) { }
 
@@ -80,7 +82,7 @@ export class ExibirProdutosComponent implements OnInit {
   //apagar produto usado no modal
   apagar(){
     this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
-      alert ('Produto apagado com sucesso!')
+      this.alertas.showAlertSuccess('Produto apagado com sucesso!')
       this.findByIdUser()    
       this.router.navigate(['/exibirProdutos'])
     })

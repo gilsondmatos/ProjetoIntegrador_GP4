@@ -1,4 +1,26 @@
 
+  <div class="card text-center">
+    <div class="card-body card-color">
+      <br />
+      <br />
+
+      <h5 class="">Transformando sonhos em realidade</h5>
+      <br />
+      <h3>COLABORE</h3>
+      <br />
+      <!-- Exemplo de único botão danger -->
+      <div class="btn-group  ">
+
+        <div class="row d-flex justify-content-center mb-5 mt-5" >
+          <div class="col-md-4">
+            <div class="form-group">
+              <input type="text" class="form-control" id="nomeProduto" placeholder="Digite o nome de um produto 
+              para pesquisar" [(ngModel)]='nomeProduto' (keyup)='findByNomeProduto()'>
+            </div>
+          </div>
+        </div>
+
+
   <!-- card dos produtos  -->
   <div class="py-5 bg-light" >
     <div class="container">
@@ -22,8 +44,4 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
 
