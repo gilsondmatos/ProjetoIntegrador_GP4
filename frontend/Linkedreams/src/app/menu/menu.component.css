@@ -2,6 +2,10 @@
   font-size: 16pt
 }
 
+.entrar{
+   list-style: none;
+  
+}
 .fs-16{
   font-size: 16pt;
 }
@@ -28,3 +32,4 @@
 .cursor{
   cursor: pointer;
 }
+
