@@ -77,7 +77,7 @@ export class CadastroProdutoComponent implements OnInit {
     this.router.navigate(['/cadastroProduto'])
   },error=>{
     if(error.status==500){
-      alert('Preencha todos os campos')
+      this.alertas.showAlertDanger('Preencha todos os campos')
     }
   })
 }

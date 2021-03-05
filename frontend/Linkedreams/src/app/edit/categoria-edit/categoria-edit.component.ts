@@ -2,11 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/Model/Categoria';
 import { Produto } from 'src/app/Model/Produto';
-import { User } from 'src/app/Model/User';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
-import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-categoria-edit',
@@ -26,7 +24,6 @@ export class CategoriaEditComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
     private alertas: AlertasService
   ) { }

@@ -1,7 +1,7 @@
 <div class="container-fluid ">
   <div class="row d-flex justify-content-center mt-5 ">
     <div class="col-md-10 color-principal">
-      <h1 class="mt-4 text-center text-white ">Editar produtos</h1>
+      <h1 class="mt-4 text-center text-white ">Editar Produtos</h1>
     </div>
   </div>
   <div class="row d-flex justify-content-center color-texto">
@@ -22,7 +22,7 @@
     </div>
     <div class="col-md-5 color-secondary">
       <div class="form-group mt-2">
-        <label for="texto">Escolha uma categoria : </label>
+        <label for="texto">Escolha uma categoria: </label>
         <select  class="form-control" [(ngModel)]='idCategoria' (change)='findByCategoria()' name="categoria" id="categoria">
           <option *ngFor='let item of listaCategorias' value="{{item.id}}" >{{item.nome}}</option>
         </select>
@@ -49,7 +49,7 @@
   <div class="row d-flex justify-content-center color-texto mb-2">
     <div class="col-md-10 color-secondary">
       <div class="form-group">
-        <label for="foto">Link da Foto :</label>
+        <label for="foto">Link da Foto:</label>
         <input [(ngModel)]='produto.imagem' class="form-control color-texto" type="text" name="foto" id="foto" placeholder="Link da foto do produto">
     </div>
       <div class="form-group">

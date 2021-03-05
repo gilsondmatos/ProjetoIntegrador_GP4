@@ -38,7 +38,7 @@ export class ProdutoEditComponent implements OnInit {
       this.router.navigate(['/inicio'])
     }
     if(environment.tipo != 'ONG'){
-      alert ('Você precisa ser uma ONG para acessar essa rota')
+      this.alertas.showAlertDanger('Você precisa ser uma ONG para acessar essa rota')
       this.router.navigate(['/inicio'])
     }
 

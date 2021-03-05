@@ -3,12 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import * as $ from 'jquery';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../Model/Categoria';
-import { Produto } from '../Model/Produto';
 import { User } from '../Model/User';
 import { AlertasService } from '../service/alertas.service';
-import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
-import { ProdutoService } from '../service/produto.service';
+
 
 @Component({
   selector: 'app-exibir-categorias',
@@ -27,10 +25,7 @@ export class ExibirCategoriasComponent implements OnInit {
   escreveON: string
 
   constructor(
-    private authService:AuthService,
     private router: Router,
-    private route: ActivatedRoute,
-    private produtoService: ProdutoService,
     private alertas: AlertasService,
     private categoriaService: CategoriaService,
 
