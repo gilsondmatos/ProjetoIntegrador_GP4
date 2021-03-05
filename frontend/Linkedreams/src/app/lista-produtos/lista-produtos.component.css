@@ -9,14 +9,15 @@
 .color-secondary{
    background-color: #F1F9FF;
  }
- 
+
  .color-principal {
    background: #2699FB;
  }
- 
+
  .color-texto{
    color: #2699FB;
  }
  .card-largura {
    max-width: 18rem;
+   object-fit: cover;
 }
