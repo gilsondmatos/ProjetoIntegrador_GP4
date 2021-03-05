@@ -87,5 +87,13 @@ export class ExibirProdutosComponent implements OnInit {
       this.router.navigate(['/exibirProdutos'])
     })
   }
+  sair() {
+    this.router.navigate(['/inicio'])
+    environment.token = ''
+    environment.nome_completo = ''
+    environment.tipo = ''
+    environment.id = 0
+  }
+
 
 }

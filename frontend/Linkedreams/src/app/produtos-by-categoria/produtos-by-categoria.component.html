@@ -1,76 +1,33 @@
-<div class="container">
-    <!-- titulo do sete  -->
-  
-    <div class="card text-center">
-      <div class="card-body card-color">
-        <br />
-        <br />
-  
-        <h5 class="">Transformando sonhos em realidade</h5>
-        <br />
-        <h3>COLABORE</h3>
-        <br />
-        <!-- Exemplo de único botão danger -->
-        <div class="btn-group  ">
-          <button type="button" class="btn btn-outline-primary dropdown-toggle mr-5 mb-5 " data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            ONGs
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Fundação terra </a>
-            <a class="dropdown-item" href="#">Amigos do bem </a>
-            <a class="dropdown-item" href="#">karol conKa</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Link separado</a>
-          </div>
-          <div>
-            <button type="button" class="btn btn-outline-primary dropdown-toggle  mb-5 " data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Causa
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">lei de causa e efeito </a>
-              <a class="dropdown-item" href="#">judicial</a>
-              <a class="dropdown-item" href="#">Alguma coisa aqui</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Link separado</a>
-            </div>
-          </div>
-  
-        </div>
-      </div>
-    </div>
-    
-    <!-- /titulo do sete  -->
-  
-
-  <!-- card dos produtos  -->
-
-
-  <div class="container-fluid col-md-10">
-    <div class="row  d-flex justify-content-center">
-      <div class="col-md-4 "*ngFor='let item of  categoria.produto'>
-       
-        <div class="card-group mt-4 mb-4 card-largura"  >
-          <div class="card ">
-            <img class="card-img-top" src={{item.imagem}} alt="">
-            <div class="card-body card-color">
-              <h5 class="card-title text-center">{{item.nome}}</h5>
-              <p class="card-text text-center"><small class="text-muted textFonte">
-               {{item.usuario.nome_completo}}
-              </small></p>
-              
-              
-            </div>
-       
-            <div class="d-flex justify-content-around card-color align-items-center">
-              <p class="card-text textPreco">R$ {{item.preco}}</p>
-              <button type="button" class="btn btn-outline-primary text-center mb-3 ">Comprar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+<div class="card text-center">
+  <div class="card-body card-color">
+    <h3 class="mt-2">Transformando sonhos em realidade</h3>
+    <h5>Categoria: {{categoria.nome}}</h5>
   </div>
+</div>
   
+  <!-- card dos produtos  -->
+<div class="py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 " *ngFor='let item of categoria.produto'>
+        <div class="card mb-4 shadow-sm card-altura-largura">
+          <img class="card-img-top img" src={{item.imagem}} alt="Card image cap">
+          <div class="card-body card-color">
+            <h5 class="card-title text-center">{{item.nome}}</h5>
+            <p class="card-text text-center"><small class="text-muted textFonte">
+                {{item.usuario.nome_completo}}
+              </small></p>
+            <p class="card-text text-justify">{{item.descricao}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+            </div>
+          </div>
+          <div class="d-flex justify-content-around card-color align-items-center">
+            <p class="card-text textPreco">R$ {{item.preco}}</p>
+            <button type="button" class="btn btn-outline-primary text-center mb-3 ">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/card dos produtos  -->

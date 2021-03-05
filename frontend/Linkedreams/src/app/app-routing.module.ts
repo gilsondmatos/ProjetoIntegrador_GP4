@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { CadastroCategoriaComponent } from './cadastro-categoria/cadastro-categoria.component';
 import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 import { CestaComprasComponent } from './cesta-compras/cesta-compras.component';
 
 import { ContatoComponent } from './contato/contato.component';
+import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { ExibirCategoriasComponent } from './exibir-categorias/exibir-categorias.component';
 import { ExibirProdutosComponent } from './exibir-produtos/exibir-produtos.component';
 
 import { InicioComponent } from './inicio/inicio.component';
@@ -28,7 +32,10 @@ const routes: Routes = [
   {path:'contato', component: ContatoComponent},
   {path:'exibirProdutos',component:ExibirProdutosComponent},
   {path:'produto-edit/:id',component:ProdutoEditComponent},
-  {path:'produtoByCategoria/:id', component:ProdutosByCategoriaComponent}
+  {path:'produtoByCategoria/:id', component:ProdutosByCategoriaComponent},
+  {path: 'cadastroCategoria',component:CadastroCategoriaComponent},
+  {path: 'exibirCategorias',component:ExibirCategoriasComponent},
+  {path:'categoria-edit/:id',component:CategoriaEditComponent}
 ];
 
 @NgModule({

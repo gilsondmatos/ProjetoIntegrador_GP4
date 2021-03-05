@@ -23,7 +23,7 @@ export class ProdutosByCategoriaComponent implements OnInit {
     window.scroll(0,0)
     let id=this.route.snapshot.params['id']
     this.findByIdCategoria(id)
-  
+    
   }
   
   findByIdCategoria(id:number){

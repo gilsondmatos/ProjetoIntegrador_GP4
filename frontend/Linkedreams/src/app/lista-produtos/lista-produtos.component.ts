@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../Model/Categoria';
 import { Produto } from '../Model/Produto';
 import { CategoriaService } from '../service/categoria.service';
@@ -16,7 +18,7 @@ export class ListaProdutosComponent implements OnInit {
 
   constructor(
     private produtoService:ProdutoService,
-    private categoriaService: CategoriaService
+    private router: Router,
   ) { }
 
   ngOnInit(){
@@ -24,6 +26,14 @@ export class ListaProdutosComponent implements OnInit {
     this.getAllProdutos() 
   }
 
+  comprar(){
+    if(environment.token == ''){
+      alert ('Você precisa está logado para finalizar a compra')
+    }
+    else{
+      this.router.navigate(['/inicio'])
+    }
+  }
   getAllProdutos(){
     this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
       this.listaProdutos=resp

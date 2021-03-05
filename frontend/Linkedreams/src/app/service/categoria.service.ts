@@ -33,5 +33,13 @@ export class CategoriaService {
     return this.http.get<Categoria[]>(`http://localhost:8080/categorias/nome/${nome}`, this.token)
   }
 
+  
+  putCategoria (categoria: Categoria): Observable <Categoria>{
+    return this.http.put<Categoria>('http://localhost:8080/categorias', categoria, this.token)
+  }
+
+  deleteCategoria(id: number){
+    return this.http.delete(`http://localhost:8080/categorias/${id}`, this.token)
+  }
 
 }

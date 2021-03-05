@@ -14,3 +14,17 @@
     font-family: 'Roboto', sans-serif;
   }
   
+  .card-altura-largura{
+    height: 30rem;
+    max-height: 30rem;
+    min-height: 30rem;
+    max-width: 20rem;
+  }
+  
+  .img {
+  max-width: 100%;
+  width: 350px;
+  height: 200px;
+  object-fit: cover;
+  }
+  

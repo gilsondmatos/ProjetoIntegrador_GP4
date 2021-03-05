@@ -22,6 +22,7 @@ export class MenuComponent implements OnInit {
   ngOnInit(){
     window.scroll(0,0)
   }
+  
   direcionaMenu(){
     if(environment.tipo=='ONG'){
       this.router.navigate(["/cadastroProduto"])

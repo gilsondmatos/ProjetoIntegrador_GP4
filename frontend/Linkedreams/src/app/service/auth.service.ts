@@ -53,5 +53,20 @@ export class AuthService {
     }
     return ok
   }
- 
+  ong(){
+    let ok: boolean = true
+
+    if (environment.tipo == 'ONG'){
+      ok = false
+    }
+    return ok
+  }
+  analisaONG(){
+    let ok: boolean = false
+
+    if (environment.tipo == 'ONG'){
+      ok = true
+    }
+    return ok
+  }
 }

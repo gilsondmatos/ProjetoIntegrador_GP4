@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
+
 import { AppComponent } from './app.component';
 import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 import { InicioComponent } from './inicio/inicio.component';
@@ -15,16 +16,15 @@ import { CestaComprasComponent } from './cesta-compras/cesta-compras.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
 import { ContatoComponent } from './contato/contato.component';
-
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { ExibirProdutosComponent } from './exibir-produtos/exibir-produtos.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
-import { LoginEntrarComponent } from './login-entrar/login-entrar.component';
 import { ProdutosByCategoriaComponent } from './produtos-by-categoria/produtos-by-categoria.component';
 import { AlertasComponent } from './alertas/alertas.component';
 
-
-
+import { CadastroCategoriaComponent } from './cadastro-categoria/cadastro-categoria.component';
+import { ExibirCategoriasComponent } from './exibir-categorias/exibir-categorias.component';
+import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 
 
 @NgModule({
@@ -43,9 +43,11 @@ import { AlertasComponent } from './alertas/alertas.component';
     ContatoComponent,
     ExibirProdutosComponent,
     ProdutoEditComponent,
-    LoginEntrarComponent,
     ProdutosByCategoriaComponent,
-    AlertasComponent
+    AlertasComponent,
+    CadastroCategoriaComponent,
+    ExibirCategoriasComponent,
+    CategoriaEditComponent
   ],
   imports: [
     BrowserModule,

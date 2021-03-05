@@ -22,26 +22,25 @@
 
   <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
     <ul class="navbar-nav mr-auto ">
-      
-      
-      <li class="nav-item dropdown active">
+      <li *ngIf='authService.analisaONG()' class="nav-item active cursor">
+        <a class="nav-link px-3" (click)='direcionaMenu()'>Minha ONG</a>
+      </li>
+      <li *ngIf='authService.ong()'class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" >
          Contribuir
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Venda</a>
-          <a class="dropdown-item" href="#">Eventos</a>
-          <a class="dropdown-item" href="#">Doação</a>  
+          <a class="dropdown-item" [routerLink]="['/produtoByCategoria',1]">Venda</a>
+          <a class="dropdown-item" [routerLink]="['/produtoByCategoria',2]">Eventos</a>
+          <a class="dropdown-item" [routerLink]="['/produtoByCategoria',3]">Doação</a>  
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Ver mais</a>
+          <a class="dropdown-item" routerLink='/listaProdutos'>Ver mais</a>
         </div>
       </li>
-      <li class="nav-item active">
+      <li *ngIf='authService.deslogado()' class="nav-item active">
         <a class="nav-link px-3" routerLink='/faca-parte' >Faça Parte</a>
       </li>
-      <li *ngIf='authService.logado()' class="nav-item active cursor">
-        <a class="nav-link px-3" (click)='direcionaMenu()' >Minha ONG</a>
-      </li>
+      
       <li class="nav-item active">
         <a class="nav-link px-3" routerLink='/quem-somos'>Quem Somos</a>
       </li>
