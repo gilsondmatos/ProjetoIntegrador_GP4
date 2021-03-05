@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
 
   userLogin: UserLogin=new UserLogin()
   constructor(
-    private authService: AuthService,
+    public authService: AuthService,
     private router: Router,
     private alertas: AlertasService
   ) { }

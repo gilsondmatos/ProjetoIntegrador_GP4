@@ -46,24 +46,11 @@
         <a routerLink='/faca-parte' class="btn btn-primary">SEJA UM APOIADOR</a>
 
       </div>
-      <div class="d-flex justify-content-center card-color">
-        <button type="button" class="btn btn-outline-primary text-center mb-3 " [routerLink]="['/produtoByCategoria',1]">Comprar</button>
-      </div>
+     
     </div>
 
 
-    <div class="card">
-      <img class="card-img-top" src="../../assets/img/carde de produto 2.jpg" alt="Imagem de capa do card">
-      <div class="card-body card-color">
-        <h5 class="card-title">Título do card</h5>
-        <p class="card-text">Este é um card com suporte a texto embaixo, que funciona como uma introdução a um conteúdo
-          adicional.</p>
-      </div>
-      <div class="d-flex justify-content-center card-color">
-        <button type="button" class="btn btn-outline-primary text-center mb-3 " [routerLink]="['/produtoByCategoria',2]">Comprar</button>
-
-      </div>
-    </div>
+  
 
     <!-- /titulo do sete  -->
 
@@ -75,7 +62,7 @@
           <h2 class="text-center fonte-titulo cor-texto mt-5 mb-4">SE ENGANJE EM UM CAUSA</h2>
         </div>
         <div class="row people d-flex justify-content-center">
-          <a class="col-md-4 item" href="#" target="_blank">
+          <a class="col-md-4 item" [routerLink]="['/produtoByCategoria',3]" >
             <div class="box" style="background-image:url(https://i.imgur.com/OcwpJBl.jpg)">
               <div class="cover">
                 <h3 class="name">DOAÇÕES</h3>
@@ -84,7 +71,7 @@
             </div>
           </a>
 
-          <a class="col-md-4 item" href="#" target="_blank">
+          <a class="col-md-4 item" [routerLink]="['/produtoByCategoria',2]" >
             <div class="box" style="background-image:url(https://i.imgur.com/FjwW2Vm.jpg)">
               <div class="cover text-center">
                 <h3 class="name">EVENTOS</h3>
@@ -93,7 +80,7 @@
             </div>
           </a>
 
-          <a class="col-md-4 item" href="#" target="_blank">
+          <a class="col-md-4 item"  [routerLink]="['/produtoByCategoria',1]">
             <div class="box" style="background-image:url(https://i.imgur.com/y7G93Sv.jpg)">
               <div class="cover">
                 <h3 class="name">PRODUTOS</h3>
@@ -103,10 +90,11 @@
           </a>
         </div>
       </div>
-
-      <div class="d-flex justify-content-center card-color">
-        <button type="button" class="btn btn-outline-primary text-center mb-3 " [routerLink]="['/produtoByCategoria',3]">Comprar</button>
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-primary mb-5" routerLink='/listaProdutos'>VEJA MAIS</button>
       </div>
+
+      
 
     </div>
   </div>

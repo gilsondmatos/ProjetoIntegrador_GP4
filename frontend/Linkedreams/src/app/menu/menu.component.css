@@ -24,13 +24,7 @@
 .fs-18{
   font-size: 18px;
 }
-.font-menu {
-   font-family: 'Roboto',
-   sans-serif;
-   color: white;
-   text-decoration: none;
-   font-weight:400;
-   font-size: 13pt;
+
+.cursor{
+  cursor: pointer;
 }
-
-
