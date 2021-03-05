@@ -73,7 +73,7 @@ export class CadastroCategoriaComponent implements OnInit {
     this.router.navigate(['/exibirCategorias'])
   },error=>{
     if(error.status==500){
-      alert('Preencha todos os campos')
+      this.alertas.showAlertDanger('Preencha todos os campos!')
     }
   })
 }

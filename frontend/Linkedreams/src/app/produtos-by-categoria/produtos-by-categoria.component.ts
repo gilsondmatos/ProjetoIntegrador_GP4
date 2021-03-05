@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Categoria } from '../Model/Categoria';
-import { Produto } from '../Model/Produto';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriaService } from '../service/categoria.service';
 
@@ -15,7 +14,6 @@ export class ProdutosByCategoriaComponent implements OnInit {
 
   constructor(
     private categoriaService: CategoriaService,
-    private router: Router,
     private route: ActivatedRoute,
   ) { }
 
