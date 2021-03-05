@@ -4,6 +4,7 @@ import * as $ from 'jquery';
 import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../Model/Produto';
 import { User } from '../Model/User';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -26,7 +27,8 @@ export class ExibirProdutosComponent implements OnInit {
     private authService:AuthService,
     private router: Router,
     private route: ActivatedRoute,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private alertas: AlertasService
 
   ) { }
 
@@ -41,12 +43,16 @@ export class ExibirProdutosComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/inicio'])
     }
+    if(environment.tipo != 'ONG'){
+      alert ('Você precisa ser uma ONG para acessar essa rota')
+      this.router.navigate(['/inicio'])
+    }
 
     this.findByIdUser()
-    this.idProduto
-    
+   
   }
 
+  //funcao para escrever ativado/desatvado na lista de produtos
   analisaStatus(status: boolean){
     if(status==true){
       this.escreveON="Ativado"
@@ -68,14 +74,15 @@ export class ExibirProdutosComponent implements OnInit {
     })
   }
 
+  //enviar id do produto para o modal 
   enviarIdProduto(id: number){
     this.idProduto=id
     this.findByIdProduto(this.idProduto)
   }
-
+  //apagar produto usado no modal
   apagar(){
     this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
-      alert ('Produto apagado com sucesso!')
+      this.alertas.showAlertSuccess('Produto apagado com sucesso!')
       this.findByIdUser()    
       this.router.navigate(['/exibirProdutos'])
     })

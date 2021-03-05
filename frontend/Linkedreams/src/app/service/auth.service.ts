@@ -2,6 +2,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { User } from '../Model/User';
 import { UserLogin } from '../Model/UserLogin';
 
@@ -25,4 +26,32 @@ export class AuthService {
   getByIdUser(id: number): Observable<User>{
     return this.http.get<User>(`http://localhost:8080/usuarios/${id}`)
   }
+
+    logado(){
+    let ok: boolean = false
+
+    if (environment.token != ''){
+      ok = true
+    }
+    return ok
+  }
+
+  deslogado(){
+    let ok: boolean = true
+
+    if (environment.token != ''){
+      ok = false
+    }
+    return ok
+  }
+
+  adm(){
+    let ok: boolean = false
+
+    if (environment.tipo == 'adm'){
+      ok = true
+    }
+    return ok
+  }
+ 
 }

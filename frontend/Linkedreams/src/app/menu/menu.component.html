@@ -1,10 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-navbar">
-  <a class="navbar-brand" href="#"
+  <a class="navbar-brand" 
+  routerLink='/inicio'
     ><img
       src="../../assets/img/Logo_LinkeDreams (1).png"
       alt="Imagem Usuário"
       width="140px"
       class="img-fluid"
+      
   /></a>
   <button
     class="navbar-toggler"
@@ -20,19 +22,42 @@
 
   <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
     <ul class="navbar-nav mr-auto ">
-      <li class="nav-item active">
-        <a class="nav-link px-3 font-menu" routerLink='/quem-somos'>Quem Somos</a>
+      
+      <li *ngIf='authService.logado()' class="nav-item active">
+        <a  class="nav-link px-3" (click)='direcionaMenu()' >Minha ONG</a>
+      </li>
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" >
+         Contribuir
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Venda</a>
+          <a class="dropdown-item" href="#">Enventos</a>
+          <a class="dropdown-item" href="#">Doação</a>  
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Ver mais</a>
+        </div>
       </li>
       <li class="nav-item active">
-        <a class="nav-link px-3 font-menu" routerLink='/faca-parte'>Faça Parte</a>
+        <a class="nav-link px-3" routerLink='/faca-parte' >Faça Parte</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link px-3 font-menu" routerLink='/contato'>Contato</a>
+        <a class="nav-link px-3" routerLink='/quem-somos'>Quem Somos</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link px-3" routerLink='/contato'>Contato</a>
       </li>
     </ul>
   </div>
+  <div class="nav-item active">
+    <p *ngIf='authService.logado()'  class="m-0 mr-3 ml-3 font-weight-bold text-white fs-16">Olá, {{userLogin.nome_completo}}</p>
+  </div>
   <div>
-    <a class="m-0 text-white fs-18 px-3" data-toggle="modal" data-target="#modal-login"><i class="fa fa-user"aria-hidden="true"></i>  Login</a>
+    <a *ngIf='authService.deslogado()' class="m-0 text-white fs-18 px-3 " data-toggle="modal" data-target="#modal-login"><i class="fa fa-user"aria-hidden="true"></i>  Entrar</a>
+  </div>
+  <div class="div">
+    <a  *ngIf='authService.logado()' class="m-0 text-white fs-18 px-3" (click)='sair()'><i class="fa fa-sign-out"
+      aria-hidden="true"></i> Sair</a>
   </div>
 </nav>
 
@@ -48,7 +73,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content justify-content-center">
       <div class="modal-header justify-content-center">
-        <p class="text-center" id="exampleModalLabel">Login</p>
+        <p class="text-center" id="exampleModalLabel">Entrar</p>
         <button
           type="button"
           class="close"
@@ -78,7 +103,7 @@
       </div>
 
       <div class="modal-footer justify-content-center">
-        <p class="text-center">Não tem uma conta? <a routerLink='/faca-parte'>Cadastre-se</a></p>
+        <p class="text-center" data-dismiss="modal">Não tem uma conta? <a routerLink='/faca-parte'>Cadastre-se</a></p>
       </div>
     </div>
   </div>
