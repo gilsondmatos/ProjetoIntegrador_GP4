@@ -1,121 +1,150 @@
-<div class = "container bg-navbar">
+<body class="bg-light">
 
-    <div class = "col-md-12">
-        <h1 class="d-flex text-align-center text-white">
-           <p href="#">Pagamento</p></h1>
-            <h3 class="d-flex text-align-center text-white"><p href="#">Escolha o método de pagamento </p></h3>
+  <div class="container">
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="https://i.imgur.com/m3dqsYN.png" alt="" width="250" height="50">
+      <h2>Finalizar pagamento</h2>
     </div>
 
-    <div class="row bg-navbar2 ">
-        <div class="col-md-6 font-texto">
+    <div class="row">
 
-            <h4><p href="#">Informações do pagamento</p></h4> 
+      <div class="col-md-4 order-md-2 mb-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span>Seu carrinho</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">Nome do produto</h6>
+              <small class="text-muted">Descrição</small>
+            </div>
+            <span class="text-muted">R$12,00</span>
+          </li>
 
-            <form>
-                <div class="form-row">
-                    <div class="form-group col-md-12 font-texto">
-                        <label for="inputAddress2"><p href="#">Nome Completo</p> </label>
-                        <input type="text" class="form-control" id="nome" placeholder="Nome Completo">
-                      </div>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Total (R$)</span>
+            <strong>R$ 20,00</strong>
+          </li>
+        </ul>
+      </div>
 
-                                   
-                     <div class="form-group col-md-10 font-texto">
-                        <label for="inputAddress2"><p href="#">Endereço</p></label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Rua, Av, etc.">
-                  </div>
-                  <div class="form-group col-md-2 font-texto">
-                    <label for="inputPassword4"><p href="#">Número</p></label>
-                    <input type="text" class="form-control" id="Numero" placeholder="Nº">
-                  </div>
-                </div>
-                
-                <div class="form-group font-texto">
-                  <label for="inputAddress2"><p href="#">Complemento</p></label>
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc.">
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6 font-texto">
-                    <label for="inputCity"><p href="#">Cidade</p></label>
-                    <input type="text" class="form-control" id="inputCity">
-                  </div>
-                  <div class="form-group col-md-4 font-texto">
-                    <label for="inputEstado"><p href="#">Estado</p></label>
-                    <select id="inputEstado" class="form-control">
-                      <option selected><p href="#">Escolher...</p></option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-md-2 font-texto">
-                    <label for="inputCEP"><p href="#">CEP</p></label>
-                    <input type="text" class="form-control" id="inputCEP">
-                  </div>
-                </div>
-                <div class="form-group">
-                 
-                </div>
-                <button type="submit" class="btn btn-primary text-white">Realizar Pagamento</button>
-              </form>
-             
-              
+      <div class="col-md-7 order-md-1">
+        <h4 class="mb-3">Cobrança</h4>
+        <form class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+            <div class="invalid-feedback">
+              Please enter a valid email address for shipping updates.
+            </div>
+          </div>
 
-        </div>
+          <div class="mb-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="e-mail@exemplo.com">
+            <div class="invalid-feedback">
+              Please enter a valid email address for shipping updates.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="address">Endereço</label>
+            <input type="text" class="form-control" id="address" placeholder="Digite seu endereço" required>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div>
 
 
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="country">Pais</label>
+              <select class="custom-select d-block w-100" id="country" required>
+                <option value="">Escolher...</option>
+                <option>Brasil</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid country.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="state">Estado</label>
+              <select class="custom-select d-block w-100" id="state" required>
+                <option value="">Escolher...</option>
+                <option>São Paulo</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="zip">Cep</label>
+              <input type="text" class="form-control" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+                Zip code required.
+              </div>
+            </div>
+          </div>
+          <hr class="mb-4">
+          <div class="custom-control custom-checkbox">
+            <h4 class="mb-3">É uma doação? Ajude a ONG mensalmente</h4>
+            <input type="checkbox" class="custom-control-input" id="same-address">
+            <label class="custom-control-label" for="same-address">Quero doar esse valor mensalmente</label>
 
+          </div>
 
-        <div class="col-md-6">
+          <hr class="mb-4">
 
-            <div class="row d-flex justify-content-center font-texto">
-                <div class="col-md-10">
-        
-                      <h4><p href="#">Informações do Cartão de Crédito</p></h4> 
-                    
-                    
-                          
-                        <div class="form-row">
-                          <div class="form-group col-md-12 font-texto">
-                              <label for="inputAddress2"><p href="#">Nome escrito no cartão</p> </label>
-                              <input type="text" class="form-control" id="nome" placeholder="Nome Completo">
-                            </div>
+          <h4 class="mb-3">Pagamento</h4>
 
-                            <div class="form-group col-md-10 font-texto">
-                                <label for="inputAddress2"><p href="#">Número do cartão de crédito</p></label>
-                                <input type="text" class="form-control" id="inputAddress2" placeholder="Rua, Av, etc.">
-                          </div>
-                          <div class="form-group col-md-2 font-texto">
-                            <label for="inputPassword4"><p href="#">Bandeira</p></label>
-                            <input type="text" class="form-control" id="Numero" placeholder="Nº">
-                          </div>
-                        </div>
-                        
-                        <div class="form-group font-texto">
-                          <label for="inputAddress2"><p href="#">Nome escrito no cartão</p></label>
-                          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc.">
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-4 font-texto">
-                              <label for="inputCity"><p href="#">CVV</p></label>
-                              <input type="text" class="form-control" id="inputCity">
-                            </div>
-                            <div class="form-group col-md-4 font-texto">
-                              <label for="inputEstado"><p href="#">Data de expiração</p></label>
-                              <select id="inputEstado" class="form-control text-white">
-                                <option selected><p href="#">Escolher...</p></option>
-                                <option>...</option>
-                              </select>
-                            </div>
-                            <div class="form-group col-md-4 font-texto">
-                                <label for="inputEstado font-texto"><p href="#">Nº parcelas</p></label>
-                                <select id="inputEstado" class="form-control">
-                                  <option selected><p href="#">Escolher...</p></option>
-                                  <option>...</option>
-                                </select>
-                              </div>
-                            
-                          <div class="form-group">
-
-        </div>
-
+          <div class="d-block my-3">
+            <div class="custom-control custom-radio">
+              <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+              <label class="custom-control-label" for="credit">Crédito</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+              <label class="custom-control-label" for="debit">Débito</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="cc-name">Nome do titular</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required>
+              <small class="text-muted">Nome conforme exibido no cartão</small>
+              <div class="invalid-feedback">
+                Name on card is required
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="cc-number">Número do cartão</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required>
+              <div class="invalid-feedback">
+                Credit card number is required
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 mb-3">
+              <label for="cc-expiration">Expiração</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+              <div class="invalid-feedback">
+                Expiration date required
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="cc-cvv">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+              <div class="invalid-feedback">
+                Security code required
+              </div>
+            </div>
+          </div>
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block mb-5" type="submit">Finalizar Comprar</button>
+        </form>
+      </div>
     </div>
+  </div>
+</body>
 
-</div>
