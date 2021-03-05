@@ -11,7 +11,9 @@ import { ExibirProdutosComponent } from './exibir-produtos/exibir-produtos.compo
 import { InicioComponent } from './inicio/inicio.component';
 import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
 import { OngComponent } from './ong/ong.component';
+import { ProdutosByCategoriaComponent } from './produtos-by-categoria/produtos-by-categoria.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
+
 
 const routes: Routes = [
   {path:'',redirectTo:'inicio',pathMatch:'full'},
@@ -25,8 +27,8 @@ const routes: Routes = [
   {path:'quem-somos', component: QuemSomosComponent},
   {path:'contato', component: ContatoComponent},
   {path:'exibirProdutos',component:ExibirProdutosComponent},
-  {path:'produto-edit/:id',component:ProdutoEditComponent}
-
+  {path:'produto-edit/:id',component:ProdutoEditComponent},
+  {path:'produtoByCategoria/:id', component:ProdutosByCategoriaComponent}
 ];
 
 @NgModule({

@@ -37,6 +37,10 @@ export class ProdutoEditComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/inicio'])
     }
+    if(environment.tipo != 'ONG'){
+      alert ('Você precisa ser uma ONG para acessar essa rota')
+      this.router.navigate(['/inicio'])
+    }
 
     let id=this.route.snapshot.params['id']
     this.findByIdProduto(id)

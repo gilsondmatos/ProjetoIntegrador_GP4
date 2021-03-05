@@ -43,12 +43,16 @@ export class ExibirProdutosComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/inicio'])
     }
+    if(environment.tipo != 'ONG'){
+      alert ('Você precisa ser uma ONG para acessar essa rota')
+      this.router.navigate(['/inicio'])
+    }
 
     this.findByIdUser()
-    this.idProduto
-    
+   
   }
 
+  //funcao para escrever ativado/desatvado na lista de produtos
   analisaStatus(status: boolean){
     if(status==true){
       this.escreveON="Ativado"
@@ -70,11 +74,12 @@ export class ExibirProdutosComponent implements OnInit {
     })
   }
 
+  //enviar id do produto para o modal 
   enviarIdProduto(id: number){
     this.idProduto=id
     this.findByIdProduto(this.idProduto)
   }
-
+  //apagar produto usado no modal
   apagar(){
     this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
       this.alertas.showAlertSuccess('Produto apagado com sucesso!')

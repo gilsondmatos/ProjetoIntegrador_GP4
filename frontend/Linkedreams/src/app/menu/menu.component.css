@@ -2,6 +2,9 @@
   font-size: 16pt
 }
 
+.fs-16{
+  font-size: 16pt;
+}
 .a {
   cursor: pointer;
 }
@@ -10,13 +13,13 @@
   background: #2699FB;
 }
 
-.nav-item:hover {
+/* .nav-item:hover {
   font-weight: bold;
   opacity: 0.5;
   transform: scale(1.0);
   text-decoration: none;
   size: 120%;
-}
+} */
 
 .fs-18{
   font-size: 18px;
