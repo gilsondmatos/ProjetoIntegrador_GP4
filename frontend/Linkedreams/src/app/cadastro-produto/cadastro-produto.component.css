@@ -3,7 +3,6 @@ body {
     font-family: 'Roboto', sans-serif;
   }
   
-    
 
   #sidebar-wrapper {
     min-height: 100vh;
@@ -53,5 +52,5 @@ body {
 .titulo-destaque{
   cursor: pointer;
   font-style: bold, oblique;
-  font-size: 16pt;
+  color:red
 }

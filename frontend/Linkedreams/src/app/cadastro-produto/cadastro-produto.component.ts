@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../Model/Categoria';
 import { Produto } from '../Model/Produto';
 import { User } from '../Model/User';
+import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -26,6 +27,7 @@ export class CadastroProdutoComponent implements OnInit {
   idUser= environment.id
 
   constructor(
+    public authService:AuthService,
     private router: Router,
     private categoriaService: CategoriaService,
     private produtoService: ProdutoService
@@ -42,7 +44,12 @@ export class CadastroProdutoComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/inicio'])
     }
-
+    // if(environment.tipo != 'ONG' ){
+    //   alert ('Você precisa ser uma ONG para acessar essa rota')
+    //   this.router.navigate(['/inicio'])
+    // }
+  
+    
     this.findAllCategorias()
           
   }
@@ -66,8 +73,13 @@ export class CadastroProdutoComponent implements OnInit {
     this.categoria=new Categoria()
     this.findAllCategorias()
     this.router.navigate(['/cadastroProduto'])
-    }) 
-  }
+  },error=>{
+    if(error.status==500){
+      alert('Preencha todos os campos')
+    }
+  })
+}
+
 
   sair() {
     this.router.navigate(['/inicio'])

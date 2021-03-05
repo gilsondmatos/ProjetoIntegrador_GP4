@@ -22,6 +22,7 @@ import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { ExibirProdutosComponent } from './exibir-produtos/exibir-produtos.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { LoginEntrarComponent } from './login-entrar/login-entrar.component';
+import { ProdutosByCategoriaComponent } from './produtos-by-categoria/produtos-by-categoria.component';
 
 
 
@@ -42,7 +43,8 @@ import { LoginEntrarComponent } from './login-entrar/login-entrar.component';
     ContatoComponent,
     ExibirProdutosComponent,
     ProdutoEditComponent,
-    LoginEntrarComponent
+    LoginEntrarComponent,
+    ProdutosByCategoriaComponent
   ],
 
   

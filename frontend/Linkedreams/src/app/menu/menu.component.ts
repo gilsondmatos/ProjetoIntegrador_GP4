@@ -13,14 +13,29 @@ export class MenuComponent implements OnInit {
 
   userLogin: UserLogin=new UserLogin()
   constructor(
-    private authService: AuthService,
+    public authService: AuthService,
     private router: Router
   ) { }
 
   ngOnInit(){
     window.scroll(0,0)
   }
-
+  direcionaMenu(){
+    if(environment.tipo=='ONG'){
+      this.router.navigate(["/cadastroProduto"])
+    }else if(environment.tipo=='adm'){
+      this.router.navigate(["/cadastroProduto"])
+    }else{
+      this.router.navigate(["/listaProdutos"])
+    }
+  }
+  sair() {
+    this.router.navigate(['/inicio'])
+    environment.token = ''
+    environment.nome_completo = ''
+    environment.tipo = ''
+    environment.id = 0
+  }
   entrar(){
     this.authService.entrar(this.userLogin).subscribe((resp:UserLogin)=>{
       this.userLogin=resp
@@ -34,6 +49,8 @@ export class MenuComponent implements OnInit {
 
       console.log(environment.token)
       if(environment.tipo=='ONG'){
+        this.router.navigate(["/cadastroProduto"])
+      }else if(environment.tipo=='adm'){
         this.router.navigate(["/cadastroProduto"])
       }else{
         this.router.navigate(["/listaProdutos"])
