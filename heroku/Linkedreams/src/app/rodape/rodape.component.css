@@ -1,0 +1,23 @@
+ul.social-network{
+    list-style: none;
+    padding: 0;
+  }
+
+  .bg-footer {
+  background: #2699FB;
+}
+
+.fonte-rodape {
+    font-family: 'Roboto', sans-serif;
+}
+.fs-12{
+    font-size: 10pt;
+}
+
+.font-redes-sociais {
+   font-family: 'Roboto',sans-serif;
+   color: white;
+   text-decoration: none;
+   font-size: 11pt;
+
+}

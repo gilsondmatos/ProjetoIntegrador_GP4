@@ -1,0 +1,41 @@
+.fonte-nome-usuario {
+  font-size: 16pt
+}
+
+.entrar{
+   list-style: none;
+  
+}
+.fs-16{
+  font-size: 16pt;
+}
+.a {
+  cursor: pointer;
+}
+
+.bg-navbar {
+  background: #2699FB;
+}
+
+/* .nav-item:hover {
+  font-weight: bold;
+  opacity: 0.5;
+  transform: scale(1.0);
+  text-decoration: none;
+  size: 120%;
+} */
+
+.fs-18{
+  font-size: 18px;
+}
+
+.cursor{
+  cursor: pointer;
+}
+
+
+.color-principal {
+  background: #2699FB;
+}
+
+

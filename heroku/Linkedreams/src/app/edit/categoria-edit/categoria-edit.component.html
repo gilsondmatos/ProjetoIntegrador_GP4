@@ -1,0 +1,21 @@
+<div class="container-fluid ">
+  <div class="row d-flex justify-content-center mt-5 ">
+    <div class="col-md-8 color-principal">
+      <h1 class="mt-4 text-center text-white ">Editar Categoria</h1>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center color-texto mb-5">
+    <div class="col-md-8 color-secondary">
+      <div class="form-group mt-2">
+        <label for="nome">Nome:</label>
+        <input [(ngModel)]='categoria.nome' type="text" class="form-control" id="nome"
+          placeholder="Digite o nome da categoria">
+      </div>
+
+      <div class="d-flex justify-content-center mb-2">
+        <button type="submit" class="btn btn-secondary text-white mr-4" routerLink='/exibirCategorias'>Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)='atualizar()'>Atualizar</button>
+      </div>
+
+    </div>
+  </div>

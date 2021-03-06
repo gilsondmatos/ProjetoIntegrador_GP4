@@ -1,0 +1,60 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.imagem-estatica {
+  object-fit: cover;
+  height: 400px;
+   object-position: 20%;
+}
+
+.fonte-titulo {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+}
+
+.background-texto-Plataforma {
+  background: #F1F9FF;
+}
+.cor-texto {
+  color: #2699FB;
+  font-weight: 800;
+}
+.btn-cor-botao {
+  background: #2699FB;
+  color: white;
+}
+.cor-background-depoimentos{
+  background: #2699FB;
+}
+.card-largura {
+  max-width: 25rem;
+  max-height: 25rem;
+}
+.nav-item {
+  list-style-type: none;
+}
+.font-subtitulo {
+  font-size: 16pt;
+}
+.style-botao {
+  font-size: 16pt;
+  font-weight: 700;
+}
+.text-depoimento {
+   font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  color: white;
+}
+.card-text {
+  font-size: 13pt;
+  text-align: justify;
+}
+.cor-card {
+  background-color:#F1F9FF;
+}
+.carrousel-size {
+  object-fit: cover;
+  height: 300px;
+}
+

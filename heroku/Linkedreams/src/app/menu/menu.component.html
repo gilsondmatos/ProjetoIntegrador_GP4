@@ -1,0 +1,117 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-navbar">
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#conteudoNavbarSuportado"
+    aria-controls="conteudoNavbarSuportado"
+    aria-expanded="false"
+    aria-label="Alterna navegação"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav mr-auto ">
+      <li class="nav-item active">
+        <a class="navbar-brand" 
+        routerLink='/inicio'
+          ><img
+            src="../../assets/img/Logo_LinkeDreams (1).png"
+            alt="Imagem Usuário"
+            width="140px"
+            class="img-fluid"
+            
+        /></a>
+      </li>
+      <li *ngIf='authService.analisaONG()' class="nav-item active cursor">
+        <a class="nav-link " routerLink='/cadastroProduto'>Minha ONG</a>
+      </li>
+      <li *ngIf='authService.analisaADM()' class="nav-item active cursor">
+        <a class="nav-link " routerLink='/cadastroCategoria' >Serviços</a>
+      </li>
+      <li *ngIf='authService.ong()'class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" >
+         Contribuir
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/produtoByCategoria',1]">Produtos</a>
+          <a class="dropdown-item" [routerLink]="['/produtoByCategoria',2]">Eventos</a>
+          <a class="dropdown-item" [routerLink]="['/produtoByCategoria',3]">Doação</a>  
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink='/listaProdutos'>Ver mais</a>
+        </div>
+      </li>
+      <li *ngIf='authService.deslogado()' class="nav-item active">
+        <a class="nav-link " routerLink='/faca-parte' >Faça Parte</a>
+      </li>
+      
+      <li class="nav-item active">
+        <a class="nav-link " routerLink='/quem-somos'>Quem Somos</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink='/contato'>Contato</a>
+      </li>
+    </ul>
+    <div>
+      <a *ngIf='authService.deslogado()' class="m-0 text-white fs-18 cursor " data-toggle="modal" data-target="#modal-login"><i class="fa fa-user"aria-hidden="true"></i>  Entrar</a>
+    </div>
+  </div>
+  <div class="nav-item active">
+    <p *ngIf='authService.logado()'  class="m-0 mr-3 ml-3 font-weight-bold text-white fs-16">Olá, {{userLogin.nome_completo}}</p>
+  </div>
+
+  <div class="div">
+    <a  *ngIf='authService.logado()' class="m-0 text-white fs-18 px-3 cursor" (click)='sair()'><i class="fa fa-sign-out"
+      aria-hidden="true"></i> Sair</a>
+  </div>
+</nav>
+
+<!-- modal entrar -->
+<div
+  class="modal fade"
+  id="modal-login"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content justify-content-center">
+      <div class="modal-header justify-content-center">
+        <p class="text-center" id="exampleModalLabel">Entrar</p>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Fechar"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="usuario">E-mail:</label>
+            <input  [(ngModel)]="userLogin.email"  class="form-control" type="text" name="email" id="email" placeholder="Digite o seu e-mail">
+        </div>
+
+        <div class="form-group">
+            <label for="senha">Senha:</label>
+            <input [(ngModel)]="userLogin.senha" class="form-control" type="password" name="senha" id="senha" placeholder="Digite a sua senha">
+        </div>
+
+
+          <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-primary" (click)='entrar()' data-dismiss="modal">Entrar</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer justify-content-center">
+        <p class="text-center" data-dismiss="modal">Não tem uma conta? <a routerLink='/faca-parte'>Cadastre-se</a></p>
+      </div>
+    </div>
+  </div>
+</div>
