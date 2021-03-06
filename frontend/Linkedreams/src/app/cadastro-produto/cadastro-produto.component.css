@@ -54,3 +54,6 @@ body {
   font-style: bold, oblique;
   color:red
 }
+.cursor{
+  cursor: pointer;
+}

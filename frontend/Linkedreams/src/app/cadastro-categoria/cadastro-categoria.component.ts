@@ -24,59 +24,59 @@ export class CadastroCategoriaComponent implements OnInit {
   status: boolean
 
   user: User = new User()
-  idUser= environment.id
+  idUser = environment.id
 
   constructor(
-    public authService:AuthService,
+    public authService: AuthService,
     private router: Router,
     private categoriaService: CategoriaService,
     private alertas: AlertasService
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
-                //Toggle Click Function
-    $("#menu-toggle").click(function(e) {
+    window.scroll(0, 0)
+    //Toggle Click Function
+    $("#menu-toggle").click(function (e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
-
-  
-    // if(environment.tipo != 'ONG' ){
-    //   alert ('Você precisa ser uma ONG para acessar essa rota')
-    //   this.router.navigate(['/inicio'])
-    // }
-  
-    
-    this.findAllCategorias()
-          
-  }
-
-  findAllCategorias(){
-    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
-    this.listaCategorias= resp
-    }) 
-  }
-
-  findByCategoria(){
-    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria)=>{
-    this.categoria= resp
-    }) 
-  }
-
-  cadastrar(){
-    this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
-    this.categoria=resp
-    this.alertas.showAlertSuccess('Categoria cadastrada com sucesso!') 
-    this.categoria=new Categoria()
-    this.findAllCategorias()
-    this.router.navigate(['/exibirCategorias'])
-  },error=>{
-    if(error.status==500){
-      this.alertas.showAlertDanger('Preencha todos os campos!')
+    if (environment.token == '') {
+      this.router.navigate(['/inicio'])
     }
-  })
-}
+    if (environment.tipo != 'adm') {
+      this.alertas.showAlertDanger('Você precisa ser um administrador para ter acesso!')
+      this.router.navigate(['/inicio'])
+    }
+
+    this.findAllCategorias()
+
+  }
+
+  findAllCategorias() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+      this.listaCategorias = resp
+    })
+  }
+
+  findByCategoria() {
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) => {
+      this.categoria = resp
+    })
+  }
+
+  cadastrar() {
+    this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
+      this.categoria = resp
+      this.alertas.showAlertSuccess('Categoria cadastrada com sucesso!')
+      this.categoria = new Categoria()
+      this.findAllCategorias()
+      this.router.navigate(['/exibirCategorias'])
+    }, error => {
+      if (error.status == 500) {
+        this.alertas.showAlertDanger('Preencha todos os campos!')
+      }
+    })
+  }
 
 
   sair() {
@@ -86,6 +86,6 @@ export class CadastroCategoriaComponent implements OnInit {
     environment.tipo = ''
     environment.id = 0
   }
- 
+
 
 }

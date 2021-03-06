@@ -12,7 +12,6 @@ import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
 import { OngComponent } from './ong/ong.component';
 import { PagamentoComponent } from './pagamento/pagamento.component';
-import { CestaComprasComponent } from './cesta-compras/cesta-compras.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
 import { ContatoComponent } from './contato/contato.component';
@@ -34,7 +33,6 @@ import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.com
     RodapeComponent,
     InicioComponent,
     PagamentoComponent,
-    CestaComprasComponent,
     OngComponent,
     CadastroProdutoComponent,
     ContatoComponent,

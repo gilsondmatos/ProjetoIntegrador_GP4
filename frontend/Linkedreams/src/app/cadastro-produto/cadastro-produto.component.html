@@ -3,14 +3,14 @@
   <div class="bg-light border-right " id="sidebar-wrapper" style="background-color: #F1F9FF;">
     <div class="sidebar-heading text-center">Menu</div>
     <div class="list-group list-group-flush">
-      <a routerLink='/cadastroProduto' class="list-group-item list-group-item-action bg-light"><i class="fa fa-plus-circle"
-          aria-hidden="true"></i> Cadastrar Produto</a>
+      <a routerLink='/cadastroProduto' class="list-group-item list-group-item-action bg-light"><i
+          class="fa fa-plus-circle" aria-hidden="true"></i> Cadastrar Produto</a>
       <a routerLink='/exibirProdutos' class="list-group-item list-group-item-action bg-light"><i class="fa fa-list-ol"
           aria-hidden="true"></i> Lista de Produtos</a>
-      <a  routerLink='/contato' class="list-group-item list-group-item-action bg-light"><i class="fa fa-info-circle"
+      <a routerLink='/contato' class="list-group-item list-group-item-action bg-light"><i class="fa fa-info-circle"
           aria-hidden="true"></i> Suporte Técnico</a>
-      <a  class="list-group-item list-group-item-action bg-light" (click)='sair()'><i class="fa fa-sign-out"
-          aria-hidden="true"  ></i> Sair</a>
+      <a class="list-group-item list-group-item-action bg-light cursor" (click)='sair()'><i class="fa fa-sign-out"
+          aria-hidden="true"></i> Sair</a>
     </div>
   </div>
   <!-- /#sidebar-wrapper -->
@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg navbar-light border-bottom color-secondary">
 
       <button class="btn btn-primary" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></button>
-      
+
     </nav>
 
     <div class="container-fluid ">
@@ -36,24 +36,28 @@
 
           <div class="form-group mt-2 ">
             <label for="nome">Nome:</label>
-            <input [(ngModel)]='produto.nome' class="form-control" type="text" name="nome" id="nome" placeholder="Digite o nome do produto">
+            <input [(ngModel)]='produto.nome' class="form-control" type="text" name="nome" id="nome"
+              placeholder="Digite o nome do produto">
           </div>
-          <div class="form-group">  
+          <div class="form-group">
             <label for="usuario">Valor:</label>
-            <input [(ngModel)]='produto.preco' class="form-control" type="text" name="valor" id="valor" placeholder="Digite o valor do produto">
+            <input [(ngModel)]='produto.preco' class="form-control" type="text" name="valor" id="valor"
+              placeholder="Digite o valor do produto">
           </div>
 
         </div>
         <div class="col-md-5 color-secondary">
           <div class="form-group mt-2">
-            <label for="texto">Escolha uma Categoria <a *ngIf='authService.adm()' data-toggle="modal" data-target="#novaCategoria" class="titulo-destaque" >ou cadastre uma nova</a>: </label>
-            <select  class="form-control" [(ngModel)]='idCategoria' (change)='findByCategoria()' name="categoria" id="categoria">
-              <option *ngFor='let item of listaCategorias' value="{{item.id}}" >{{item.nome}}</option>
+            <label for="texto">Escolha uma Categoria: </label>
+            <select class="form-control" [(ngModel)]='idCategoria' (change)='findByCategoria()' name="categoria"
+              id="categoria">
+              <option *ngFor='let item of listaCategorias' value="{{item.id}}">{{item.nome}}</option>
             </select>
           </div>
-          <div class="form-group">  
+          <div class="form-group">
             <label for="usuario">Causa:</label>
-            <input [(ngModel)]='produto.causa' class="form-control" type="text" name="causa" id="causa" placeholder="Digite a causa do produto">
+            <input [(ngModel)]='produto.causa' class="form-control" type="text" name="causa" id="causa"
+              placeholder="Digite a causa do produto">
           </div>
         </div>
       </div>
@@ -63,10 +67,10 @@
           <div class="form-group">
             <label for="tipo">Status do Produto:</label>
             <select class="form-control" name="status" id="status" [(ngModel)]='status' (change)='tipoStatus($event)'>
-                <option value=true>Ativado</option>
-                <option value=false>Desativado</option>
+              <option value=true>Ativado</option>
+              <option value=false>Desativado</option>
             </select>
-        </div>
+          </div>
         </div>
       </div>
 
@@ -74,16 +78,18 @@
         <div class="col-md-10 color-secondary">
           <div class="form-group">
             <label for="foto">Link da Foto:</label>
-            <input [(ngModel)]='produto.imagem' class="form-control color-texto" type="text" name="foto" id="foto" placeholder="Link da foto do produto">
-        </div>
+            <input [(ngModel)]='produto.imagem' class="form-control color-texto" type="text" name="foto" id="foto"
+              placeholder="Link da foto do produto">
+          </div>
           <div class="form-group">
             <label for="texto">Descrição:</label>
-            <textarea [(ngModel)]='produto.descricao' class="form-control" name="texto" id="texto" rows="3" placeholder="Faça uma breve descrição do produto"></textarea>
+            <textarea [(ngModel)]='produto.descricao' class="form-control" name="texto" id="texto" rows="3"
+              placeholder="Faça uma breve descrição do produto"></textarea>
           </div>
 
           <div class="d-flex justify-content-center mb-2">
 
-            <button type="submit" class="btn color-principal text-white" (click)='cadastrarProduto()' >Cadastrar</button>
+            <button type="submit" class="btn color-principal text-white" (click)='cadastrarProduto()'>Cadastrar</button>
           </div>
 
         </div>
@@ -98,7 +104,8 @@
 
 <!-- /#wrapper -->
 
-<div class="modal fade" id="novaCategoria" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+<div class="modal fade" id="novaCategoria" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -111,7 +118,8 @@
 
         <div class="form-group">
           <label for="nome">Nome</label>
-          <input [(ngModel)]='categoria.nome' type="text" class="form-control" id="nome" placeholder="Digite o nome da categoria">
+          <input [(ngModel)]='categoria.nome' type="text" class="form-control" id="nome"
+            placeholder="Digite o nome da categoria">
         </div>
 
       </div>

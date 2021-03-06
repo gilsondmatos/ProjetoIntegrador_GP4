@@ -21,7 +21,7 @@ export class ExibirCategoriasComponent implements OnInit {
 
 
   user: User = new User()
-  idUser= environment.id
+  idUser = environment.id
   escreveON: string
 
   constructor(
@@ -32,38 +32,43 @@ export class ExibirCategoriasComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
-     //Toggle Click Function
-     $("#menu-toggle").click(function(e) {
+    window.scroll(0, 0)
+    //Toggle Click Function
+    $("#menu-toggle").click(function (e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
-
- 
+    if (environment.token == '') {
+      this.router.navigate(['/inicio'])
+    }
+    if (environment.tipo != 'adm') {
+      this.alertas.showAlertDanger('Você precisa ser um administrador para ter acesso!')
+      this.router.navigate(['/inicio'])
+    }
 
     this.findAllCategorias()
-          
+
   }
 
-  findAllCategorias(){
-    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
-    this.listaCategorias= resp
-    }) 
+  findAllCategorias() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+      this.listaCategorias = resp
+    })
   }
-  findByCategoria(id:number){
-    this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria)=>{
-    this.categoria= resp
-    }) 
+  findByCategoria(id: number) {
+    this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria) => {
+      this.categoria = resp
+    })
   }
-  enviarIdCategoria(id: number){
-    this.idCategoria=id
+  enviarIdCategoria(id: number) {
+    this.idCategoria = id
     this.findByCategoria(this.idCategoria)
   }
   //apagar produto usado no modal
-  apagar(){
-    this.categoriaService.deleteCategoria(this.idCategoria).subscribe(()=>{
+  apagar() {
+    this.categoriaService.deleteCategoria(this.idCategoria).subscribe(() => {
       this.alertas.showAlertSuccess('Categoria apagada com sucesso!')
-     
+
       this.findAllCategorias()
       this.router.navigate(['/exibirCategorias'])
     })

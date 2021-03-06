@@ -3,7 +3,9 @@ body {
     font-family: 'Roboto', sans-serif;
   }
   
-    
+  .cursor{
+    cursor: pointer;
+  }
 
   #sidebar-wrapper {
     min-height: 100vh;

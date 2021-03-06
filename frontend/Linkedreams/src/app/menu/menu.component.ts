@@ -27,7 +27,7 @@ export class MenuComponent implements OnInit {
     if(environment.tipo=='ONG'){
       this.router.navigate(["/cadastroProduto"])
     }else if(environment.tipo=='adm'){
-      this.router.navigate(["/cadastroProduto"])
+      this.router.navigate(["/cadastroCategoria"])
     }else{
       this.router.navigate(["/listaProdutos"])
     }
@@ -48,13 +48,10 @@ export class MenuComponent implements OnInit {
       environment.nome_completo=this.userLogin.nome_completo
       environment.tipo=this.userLogin.tipo
 
-      console.log(environment.tipo)
-
-      console.log(environment.token)
       if(environment.tipo=='ONG'){
         this.router.navigate(["/cadastroProduto"])
       }else if(environment.tipo=='adm'){
-        this.router.navigate(["/cadastroProduto"])
+        this.router.navigate(["/cadastroCategoria"])
       }else{
         this.router.navigate(["/listaProdutos"])
       }

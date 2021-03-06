@@ -43,6 +43,10 @@ export class OngComponent implements OnInit {
         this.user=resp
         this.router.navigate(["/inicio"])
         this.alertas.showAlertSuccess('Usuário cadastrado com sucesso!')
+      },error=>{
+        if(error.status==400){
+          this.alertas.showAlertDanger('Preencha todos os dados!')
+        }
       })
     }
   }

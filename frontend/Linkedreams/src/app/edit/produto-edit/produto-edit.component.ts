@@ -14,13 +14,13 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['./produto-edit.component.css']
 })
 export class ProdutoEditComponent implements OnInit {
-  
+
   produto: Produto = new Produto()
 
-  categoria: Categoria=new Categoria()
+  categoria: Categoria = new Categoria()
   idCategoria: number
-  listaCategorias : Categoria[]
-  
+  listaCategorias: Categoria[]
+
   status: boolean
 
   constructor(
@@ -31,51 +31,52 @@ export class ProdutoEditComponent implements OnInit {
     private alertas: AlertasService
   ) { }
 
-  ngOnInit(){
-    window.scroll(0,0)
- 
+  ngOnInit() {
+    window.scroll(0, 0)
+
     if (environment.token == '') {
       this.router.navigate(['/inicio'])
     }
-    if(environment.tipo != 'ONG'){
-      this.alertas.showAlertDanger('Você precisa ser uma ONG para acessar essa rota')
+    if (environment.tipo != 'ONG') {
+      this.alertas.showAlertDanger('Você precisa ser uma ONG para ter acesso!')
       this.router.navigate(['/inicio'])
     }
 
-    let id=this.route.snapshot.params['id']
+
+    let id = this.route.snapshot.params['id']
     this.findByIdProduto(id)
     this.findAllCategorias()
   }
 
-  findByIdProduto(id:number){
-    this.produtoService.getByIdProduto(id).subscribe((resp: Produto)=>{
-      this.produto=resp
+  findByIdProduto(id: number) {
+    this.produtoService.getByIdProduto(id).subscribe((resp: Produto) => {
+      this.produto = resp
     })
   }
 
-  findAllCategorias(){
-    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
-    this.listaCategorias= resp
-    }) 
+  findAllCategorias() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+      this.listaCategorias = resp
+    })
   }
-  findByCategoria(){
-    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria)=>{
-    this.categoria= resp
-    }) 
-  }
-
-  tipoStatus(event: any){
-    this.status=event.target.value
+  findByCategoria() {
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) => {
+      this.categoria = resp
+    })
   }
 
-  atualizar(){
-    this.produto.status=this.status
-    
-    this.categoria.id=this.idCategoria
-    this.produto.categoria=this.categoria
+  tipoStatus(event: any) {
+    this.status = event.target.value
+  }
 
-    this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
-      this.produto=resp
+  atualizar() {
+    this.produto.status = this.status
+
+    this.categoria.id = this.idCategoria
+    this.produto.categoria = this.categoria
+
+    this.produtoService.putProduto(this.produto).subscribe((resp: Produto) => {
+      this.produto = resp
       this.alertas.showAlertSuccess('Produto atualizado com sucesso!')
       this.router.navigate(['/exibirProdutos'])
     })

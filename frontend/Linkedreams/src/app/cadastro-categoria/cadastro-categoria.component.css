@@ -3,6 +3,10 @@ body {
     font-family: 'Roboto', sans-serif;
   }
   
+  .cursor{
+    cursor: pointer;
+  }
+  
 
   #sidebar-wrapper {
     min-height: 100vh;
@@ -47,10 +51,4 @@ body {
 
 .color-texto{
   color: #2699FB;
-}
-
-.titulo-destaque{
-  cursor: pointer;
-  font-style: bold, oblique;
-  color:red
 }

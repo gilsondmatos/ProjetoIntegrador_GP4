@@ -26,7 +26,10 @@
         /></a>
       </li>
       <li *ngIf='authService.analisaONG()' class="nav-item active cursor">
-        <a class="nav-link px-3" (click)='direcionaMenu()'>Minha ONG</a>
+        <a class="nav-link " routerLink='/cadastroProduto'>Minha ONG</a>
+      </li>
+      <li *ngIf='authService.analisaADM()' class="nav-item active cursor">
+        <a class="nav-link " routerLink='/cadastroCategoria' >Serviços</a>
       </li>
       <li *ngIf='authService.ong()'class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" >
@@ -52,7 +55,7 @@
       </li>
     </ul>
     <div>
-      <a *ngIf='authService.deslogado()' class="m-0 text-white fs-18  " data-toggle="modal" data-target="#modal-login"><i class="fa fa-user"aria-hidden="true"></i>  Entrar</a>
+      <a *ngIf='authService.deslogado()' class="m-0 text-white fs-18 cursor " data-toggle="modal" data-target="#modal-login"><i class="fa fa-user"aria-hidden="true"></i>  Entrar</a>
     </div>
   </div>
   <div class="nav-item active">
@@ -60,7 +63,7 @@
   </div>
 
   <div class="div">
-    <a  *ngIf='authService.logado()' class="m-0 text-white fs-18 px-3" (click)='sair()'><i class="fa fa-sign-out"
+    <a  *ngIf='authService.logado()' class="m-0 text-white fs-18 px-3 cursor" (click)='sair()'><i class="fa fa-sign-out"
       aria-hidden="true"></i> Sair</a>
   </div>
 </nav>

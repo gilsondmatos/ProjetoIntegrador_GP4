@@ -14,17 +14,17 @@ import { ProdutoService } from '../service/produto.service';
   styleUrls: ['./exibir-produtos.component.css']
 })
 export class ExibirProdutosComponent implements OnInit {
-  
+
   produto: Produto = new Produto()
   idProduto: number
-  listaProdutos : Produto []
+  listaProdutos: Produto[]
 
   user: User = new User()
-  idUser= environment.id
+  idUser = environment.id
   escreveON: string
 
   constructor(
-    private authService:AuthService,
+    private authService: AuthService,
     private router: Router,
     private route: ActivatedRoute,
     private produtoService: ProdutoService,
@@ -33,9 +33,9 @@ export class ExibirProdutosComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
-     //Toggle Click Function
-     $("#menu-toggle").click(function(e) {
+    window.scroll(0, 0)
+    //Toggle Click Function
+    $("#menu-toggle").click(function (e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
@@ -43,47 +43,47 @@ export class ExibirProdutosComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/inicio'])
     }
-    if(environment.tipo != 'ONG'){
-      this.alertas.showAlertDanger('Você precisa ser uma ONG para acessar essa rota')
+    if (environment.tipo != 'ONG') {
+      this.alertas.showAlertDanger('Você precisa ser uma ONG para ter acesso!')
       this.router.navigate(['/inicio'])
     }
 
     this.findByIdUser()
-   
+
   }
 
   //funcao para escrever ativado/desatvado na lista de produtos
-  analisaStatus(status: boolean){
-    if(status==true){
-      this.escreveON="Ativado"
-    }else{
-      this.escreveON="Desativado"
+  analisaStatus(status: boolean) {
+    if (status == true) {
+      this.escreveON = "Ativado"
+    } else {
+      this.escreveON = "Desativado"
     }
     return this.escreveON
   }
 
-  findByIdUser(){
+  findByIdUser() {
     this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
       this.user = resp
     })
   }
 
-  findByIdProduto(id:number){
-    this.produtoService.getByIdProduto(id).subscribe((resp: Produto)=>{
-      this.produto=resp
+  findByIdProduto(id: number) {
+    this.produtoService.getByIdProduto(id).subscribe((resp: Produto) => {
+      this.produto = resp
     })
   }
 
   //enviar id do produto para o modal 
-  enviarIdProduto(id: number){
-    this.idProduto=id
+  enviarIdProduto(id: number) {
+    this.idProduto = id
     this.findByIdProduto(this.idProduto)
   }
   //apagar produto usado no modal
-  apagar(){
-    this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
+  apagar() {
+    this.produtoService.deleteProduto(this.idProduto).subscribe(() => {
       this.alertas.showAlertSuccess('Produto apagado com sucesso!')
-      this.findByIdUser()    
+      this.findByIdUser()
       this.router.navigate(['/exibirProdutos'])
     })
   }

@@ -12,24 +12,28 @@
 
       <div class="form-group mt-2">
         <label for="nome">Nome:</label>
-        <input [(ngModel)]='produto.nome' class="form-control" type="text" name="nome" id="nome" placeholder="Digite o nome do produto">
+        <input [(ngModel)]='produto.nome' class="form-control" type="text" name="nome" id="nome"
+          placeholder="Digite o nome do produto">
       </div>
-      <div class="form-group">  
+      <div class="form-group">
         <label for="usuario">Valor:</label>
-        <input [(ngModel)]='produto.preco' class="form-control" type="text" name="valor" id="valor" placeholder="Digite o valor do produto">
+        <input [(ngModel)]='produto.preco' class="form-control" type="text" name="valor" id="valor"
+          placeholder="Digite o valor do produto">
       </div>
 
     </div>
     <div class="col-md-5 color-secondary">
       <div class="form-group mt-2">
         <label for="texto">Escolha uma categoria: </label>
-        <select  class="form-control" [(ngModel)]='idCategoria' (change)='findByCategoria()' name="categoria" id="categoria">
-          <option *ngFor='let item of listaCategorias' value="{{item.id}}" >{{item.nome}}</option>
+        <select class="form-control" [(ngModel)]='idCategoria' (change)='findByCategoria()' name="categoria"
+          id="categoria">
+          <option *ngFor='let item of listaCategorias' value="{{item.id}}">{{item.nome}}</option>
         </select>
       </div>
-      <div class="form-group">  
+      <div class="form-group">
         <label for="usuario">Causa:</label>
-        <input [(ngModel)]='produto.causa' class="form-control" type="text" name="causa" id="causa" placeholder="Digite a causa do produto">
+        <input [(ngModel)]='produto.causa' class="form-control" type="text" name="causa" id="causa"
+          placeholder="Digite a causa do produto">
       </div>
     </div>
   </div>
@@ -39,10 +43,10 @@
       <div class="form-group">
         <label for="tipo">Status do Produto:</label>
         <select class="form-control" name="status" id="status" [(ngModel)]='status' (change)='tipoStatus($event)'>
-            <option value=true>Ativado</option>
-            <option value=false>Desativado</option>
+          <option value=true>Ativado</option>
+          <option value=false>Desativado</option>
         </select>
-    </div>
+      </div>
     </div>
   </div>
 
@@ -50,17 +54,19 @@
     <div class="col-md-10 color-secondary">
       <div class="form-group">
         <label for="foto">Link da Foto:</label>
-        <input [(ngModel)]='produto.imagem' class="form-control color-texto" type="text" name="foto" id="foto" placeholder="Link da foto do produto">
-    </div>
+        <input [(ngModel)]='produto.imagem' class="form-control color-texto" type="text" name="foto" id="foto"
+          placeholder="Link da foto do produto">
+      </div>
       <div class="form-group">
         <label for="texto">Descrição:</label>
-        <textarea [(ngModel)]='produto.descricao' class="form-control" name="texto" id="texto" rows="3" placeholder="Faça uma breve descrição do produto"></textarea>
+        <textarea [(ngModel)]='produto.descricao' class="form-control" name="texto" id="texto" rows="3"
+          placeholder="Faça uma breve descrição do produto"></textarea>
       </div>
 
       <div class="d-flex justify-content-center mb-2">
 
         <button type="submit" class="btn btn-secondary text-white mr-4" routerLink='/exibirProdutos'>Cancelar</button>
-        <button type="submit" class="btn color-principal text-white" (click)='atualizar()' >Atualizar</button>
+        <button type="submit" class="btn color-principal text-white" (click)='atualizar()'>Atualizar</button>
       </div>
 
     </div>

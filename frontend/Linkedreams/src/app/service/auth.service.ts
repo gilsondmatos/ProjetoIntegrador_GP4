@@ -69,4 +69,12 @@ export class AuthService {
     }
     return ok
   }
+  analisaADM(){
+    let ok: boolean = false
+
+    if (environment.tipo == 'adm'){
+      ok = true
+    }
+    return ok
+  }
 }

@@ -25,10 +25,10 @@ export class CadastroProdutoComponent implements OnInit {
   status: boolean
 
   user: User = new User()
-  idUser= environment.id
+  idUser = environment.id
 
   constructor(
-    public authService:AuthService,
+    public authService: AuthService,
     private router: Router,
     private categoriaService: CategoriaService,
     private produtoService: ProdutoService,
@@ -36,9 +36,9 @@ export class CadastroProdutoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
-                //Toggle Click Function
-    $("#menu-toggle").click(function(e) {
+    window.scroll(0, 0)
+    //Toggle Click Function
+    $("#menu-toggle").click(function (e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
@@ -46,41 +46,40 @@ export class CadastroProdutoComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/inicio'])
     }
-    // if(environment.tipo != 'ONG' ){
-    //   alert ('Você precisa ser uma ONG para acessar essa rota')
-    //   this.router.navigate(['/inicio'])
-    // }
-  
-    
-    this.findAllCategorias()
-          
-  }
-
-  findAllCategorias(){
-    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
-    this.listaCategorias= resp
-    }) 
-  }
-
-  findByCategoria(){
-    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria)=>{
-    this.categoria= resp
-    }) 
-  }
-
-  cadastrar(){
-    this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
-    this.categoria=resp
-    this.alertas.showAlertSuccess('Categoria cadastrada com sucesso!') 
-    this.categoria=new Categoria()
-    this.findAllCategorias()
-    this.router.navigate(['/cadastroProduto'])
-  },error=>{
-    if(error.status==500){
-      this.alertas.showAlertDanger('Preencha todos os campos')
+    if (environment.tipo != 'ONG') {
+      this.alertas.showAlertDanger('Você precisa ser uma ONG para ter acesso!')
+      this.router.navigate(['/inicio'])
     }
-  })
-}
+
+    this.findAllCategorias()
+
+  }
+
+  findAllCategorias() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+      this.listaCategorias = resp
+    })
+  }
+
+  findByCategoria() {
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) => {
+      this.categoria = resp
+    })
+  }
+
+  cadastrar() {
+    this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
+      this.categoria = resp
+      this.alertas.showAlertSuccess('Categoria cadastrada com sucesso!')
+      this.categoria = new Categoria()
+      this.findAllCategorias()
+      this.router.navigate(['/cadastroProduto'])
+    }, error => {
+      if (error.status == 500) {
+        this.alertas.showAlertDanger('Preencha todos os campos')
+      }
+    })
+  }
 
 
   sair() {
@@ -91,34 +90,25 @@ export class CadastroProdutoComponent implements OnInit {
     environment.id = 0
   }
 
-  tipoStatus(event: any){
-    this.status=event.target.value
+  tipoStatus(event: any) {
+    this.status = event.target.value
   }
 
-  cadastrarProduto(){
-    console.log(environment.id)
-    console.log(this.produto.nome)
-    console.log(this.produto.status)
-    console.log(this.produto.causa)
-    console.log(this.produto.descricao)
-    console.log(this.produto.categoria)
-    console.log(this.produto.usuario)
-    console.log(this.produto.preco)
-    console.log(this.idCategoria)
+  cadastrarProduto() {
 
-    this.produto.status=this.status
-    
-    this.categoria.id=this.idCategoria
-    this.produto.categoria=this.categoria
+    this.produto.status = this.status
 
-    this.user.id=this.idUser
-    this.produto.usuario=this.user
-    
-    this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
-    this.produto=resp
-    this.alertas.showAlertSuccess('Produto cadastrado com sucesso!')
-    this.produto= new Produto()  
-    this.router.navigate(['/exibirProdutos'])
+    this.categoria.id = this.idCategoria
+    this.produto.categoria = this.categoria
+
+    this.user.id = this.idUser
+    this.produto.usuario = this.user
+
+    this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
+      this.produto = resp
+      this.alertas.showAlertSuccess('Produto cadastrado com sucesso!')
+      this.produto = new Produto()
+      this.router.navigate(['/exibirProdutos'])
     })
 
 
