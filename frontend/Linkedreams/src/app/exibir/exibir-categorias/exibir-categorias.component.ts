@@ -1,36 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as $ from 'jquery';
 import { environment } from 'src/environments/environment.prod';
-import { Categoria } from '../Model/Categoria';
-import { Produto } from '../Model/Produto';
-import { User } from '../Model/User';
-import { AuthService } from '../service/auth.service';
-import { AlertasService } from '../service/alertas.service';
-import { CategoriaService } from '../service/categoria.service';
+import { Categoria } from '../../Model/Categoria';
+import { User } from '../../Model/User';
+import { AlertasService } from '../../service/alertas.service';
+import { CategoriaService } from '../../service/categoria.service';
 
 
 @Component({
-  selector: 'app-cadastro-categoria',
-  templateUrl: './cadastro-categoria.component.html',
-  styleUrls: ['./cadastro-categoria.component.css']
+  selector: 'app-exibir-categorias',
+  templateUrl: './exibir-categorias.component.html',
+  styleUrls: ['./exibir-categorias.component.css']
 })
-export class CadastroCategoriaComponent implements OnInit {
+export class ExibirCategoriasComponent implements OnInit {
+
   categoria: Categoria = new Categoria()
   listaCategorias: Categoria[]
   idCategoria: number
 
-  produto: Produto = new Produto()
-  status: boolean
 
   user: User = new User()
   idUser = environment.id
+  escreveON: string
 
   constructor(
-    public authService: AuthService,
     private router: Router,
+    private alertas: AlertasService,
     private categoriaService: CategoriaService,
-    private alertas: AlertasService
+
   ) { }
 
   ngOnInit() {
@@ -57,24 +55,22 @@ export class CadastroCategoriaComponent implements OnInit {
       this.listaCategorias = resp
     })
   }
-
-  findByCategoria() {
-    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) => {
+  findByCategoria(id: number) {
+    this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria) => {
       this.categoria = resp
     })
   }
+  enviarIdCategoria(id: number) {
+    this.idCategoria = id
+    this.findByCategoria(this.idCategoria)
+  }
+  //apagar produto usado no modal
+  apagar() {
+    this.categoriaService.deleteCategoria(this.idCategoria).subscribe(() => {
+      this.alertas.showAlertSuccess('Categoria apagada com sucesso!')
 
-  cadastrar() {
-    this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
-      this.categoria = resp
-      this.alertas.showAlertSuccess('Categoria cadastrada com sucesso!')
-      this.categoria = new Categoria()
       this.findAllCategorias()
       this.router.navigate(['/exibirCategorias'])
-    }, error => {
-      if (error.status == 500) {
-        this.alertas.showAlertDanger('Preencha todos os campos!')
-      }
     })
   }
 
@@ -86,6 +82,5 @@ export class CadastroCategoriaComponent implements OnInit {
     environment.tipo = ''
     environment.id = 0
   }
-
 
 }

@@ -7,22 +7,21 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 import { AppComponent } from './app.component';
-import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
+import { CadastroProdutoComponent } from './cadastro/cadastro-produto/cadastro-produto.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
-import { OngComponent } from './ong/ong.component';
+import { OngComponent } from './faca-parte/ong.component';
 import { PagamentoComponent } from './pagamento/pagamento.component';
 import { RodapeComponent } from './rodape/rodape.component';
-import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
+import { ListaProdutosComponent } from './lista/lista-produtos/lista-produtos.component';
 import { ContatoComponent } from './contato/contato.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
-import { ExibirProdutosComponent } from './exibir-produtos/exibir-produtos.component';
+import { ExibirProdutosComponent } from './exibir/exibir-produtos/exibir-produtos.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
-import { ProdutosByCategoriaComponent } from './produtos-by-categoria/produtos-by-categoria.component';
+import { ProdutosByCategoriaComponent } from './lista/produtos-by-categoria/produtos-by-categoria.component';
 import { AlertasComponent } from './alertas/alertas.component';
-
-import { CadastroCategoriaComponent } from './cadastro-categoria/cadastro-categoria.component';
-import { ExibirCategoriasComponent } from './exibir-categorias/exibir-categorias.component';
+import { CadastroCategoriaComponent } from './cadastro/cadastro-categoria/cadastro-categoria.component';
+import { ExibirCategoriasComponent } from './exibir/exibir-categorias/exibir-categorias.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 
 

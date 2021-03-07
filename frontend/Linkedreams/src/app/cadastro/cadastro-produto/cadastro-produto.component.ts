@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
 import { environment } from 'src/environments/environment.prod';
-import { Categoria } from '../Model/Categoria';
-import { Produto } from '../Model/Produto';
-import { User } from '../Model/User';
-import { AuthService } from '../service/auth.service';
-import { AlertasService } from '../service/alertas.service';
-import { CategoriaService } from '../service/categoria.service';
-import { ProdutoService } from '../service/produto.service';
+import { Categoria } from '../../Model/Categoria';
+import { Produto } from '../../Model/Produto';
+import { User } from '../../Model/User';
+import { AuthService } from '../../service/auth.service';
+import { AlertasService } from '../../service/alertas.service';
+import { CategoriaService } from '../../service/categoria.service';
+import { ProdutoService } from '../../service/produto.service';
 
 @Component({
   selector: 'app-cadastro-produto',

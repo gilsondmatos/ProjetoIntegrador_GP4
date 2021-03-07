@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Categoria } from '../Model/Categoria';
+import { Categoria } from '../../Model/Categoria';
 import { ActivatedRoute,  Router } from '@angular/router';
-import { CategoriaService } from '../service/categoria.service';
+import { CategoriaService } from '../../service/categoria.service';
 import { environment } from 'src/environments/environment.prod';
-import { AlertasService } from '../service/alertas.service';
+import { AlertasService } from '../../service/alertas.service';
 
 @Component({
   selector: 'app-produtos-by-categoria',
@@ -25,7 +25,7 @@ export class ProdutosByCategoriaComponent implements OnInit {
     window.scroll(0,0)
     let id=this.route.snapshot.params['id']
     this.findByIdCategoria(id)
-    
+    this.router.url
   }
   
   findByIdCategoria(id:number){
@@ -34,12 +34,13 @@ export class ProdutosByCategoriaComponent implements OnInit {
     })
   }
   
-  comprar(){
+  comprar(id:number){
     if(environment.token == ''){
        this.alertas.showAlertDanger('Você precisa estar logado para finalizar a compra!')
     }
     else{
-      this.router.navigate(['/pagamento'])
+  
+      this.router.navigate(['/pagamento',id])
     }
   }
 }

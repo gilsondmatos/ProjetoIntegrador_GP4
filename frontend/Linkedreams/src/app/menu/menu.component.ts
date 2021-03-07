@@ -12,26 +12,27 @@ import { AuthService } from '../service/auth.service';
 })
 export class MenuComponent implements OnInit {
 
-  userLogin: UserLogin=new UserLogin()
+  userLogin: UserLogin = new UserLogin()
   constructor(
     public authService: AuthService,
     private router: Router,
     private alertas: AlertasService
   ) { }
 
-  ngOnInit(){
-    window.scroll(0,0)
+  ngOnInit() {
+    window.scroll(0, 0)
   }
-  
-  direcionaMenu(){
-    if(environment.tipo=='ONG'){
+
+  direcionaMenu() {
+    if (environment.tipo == 'ONG') {
       this.router.navigate(["/cadastroProduto"])
-    }else if(environment.tipo=='adm'){
+    } else if (environment.tipo == 'adm') {
       this.router.navigate(["/cadastroCategoria"])
-    }else{
+    } else {
       this.router.navigate(["/listaProdutos"])
     }
   }
+
   sair() {
     this.router.navigate(['/inicio'])
     environment.token = ''
@@ -39,25 +40,25 @@ export class MenuComponent implements OnInit {
     environment.tipo = ''
     environment.id = 0
   }
-  entrar(){
-    this.authService.entrar(this.userLogin).subscribe((resp:UserLogin)=>{
-      this.userLogin=resp
-      
-      environment.id=this.userLogin.id
-      environment.token=this.userLogin.token
-      environment.nome_completo=this.userLogin.nome_completo
-      environment.tipo=this.userLogin.tipo
+  entrar() {
+    this.authService.entrar(this.userLogin).subscribe((resp: UserLogin) => {
+      this.userLogin = resp
 
-      if(environment.tipo=='ONG'){
+      environment.id = this.userLogin.id
+      environment.token = this.userLogin.token
+      environment.nome_completo = this.userLogin.nome_completo
+      environment.tipo = this.userLogin.tipo
+
+      if (environment.tipo == 'ONG') {
         this.router.navigate(["/cadastroProduto"])
-      }else if(environment.tipo=='adm'){
+      } else if (environment.tipo == 'adm') {
         this.router.navigate(["/cadastroCategoria"])
-      }else{
+      } else {
         this.router.navigate(["/listaProdutos"])
       }
-      
-    },error=>{
-      if(error.status==500){
+
+    }, error => {
+      if (error.status == 500) {
         this.alertas.showAlertDanger('Usuário ou senha estão incorretos')
       }
     })

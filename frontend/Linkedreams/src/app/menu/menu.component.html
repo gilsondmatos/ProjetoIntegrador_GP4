@@ -31,17 +31,8 @@
       <li *ngIf='authService.analisaADM()' class="nav-item active cursor">
         <a class="nav-link " routerLink='/cadastroCategoria' >Serviços</a>
       </li>
-      <li *ngIf='authService.ong()'class="nav-item dropdown active">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" >
-         Contribuir
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/produtoByCategoria',1]">Produtos</a>
-          <a class="dropdown-item" [routerLink]="['/produtoByCategoria',2]">Eventos</a>
-          <a class="dropdown-item" [routerLink]="['/produtoByCategoria',3]">Doação</a>  
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" routerLink='/listaProdutos'>Ver mais</a>
-        </div>
+      <li *ngIf='authService.ong()'class="nav-item  active">
+        <a class="nav-link" routerLink='/listaProdutos'>Contribuir</a>
       </li>
       <li *ngIf='authService.deslogado()' class="nav-item active">
         <a class="nav-link " routerLink='/faca-parte' >Faça Parte</a>

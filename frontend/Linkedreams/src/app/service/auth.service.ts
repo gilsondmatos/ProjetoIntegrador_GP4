@@ -23,58 +23,52 @@ export class AuthService {
     return this.http.post<User>('http://localhost:8080/usuarios/cadastrar', user)
   }
 
-  getByIdUser(id: number): Observable<User>{
+  getByIdUser(id: number): Observable<User> {
     return this.http.get<User>(`http://localhost:8080/usuarios/${id}`)
   }
 
-    logado(){
+  logado() {
     let ok: boolean = false
 
-    if (environment.token != ''){
+    if (environment.token != '') {
       ok = true
     }
     return ok
   }
 
-  deslogado(){
+  deslogado() {
     let ok: boolean = true
 
-    if (environment.token != ''){
+    if (environment.token != '') {
       ok = false
     }
     return ok
   }
 
-  adm(){
-    let ok: boolean = false
 
-    if (environment.tipo == 'adm'){
-      ok = true
-    }
-    return ok
-  }
-  ong(){
+  ong() {
     let ok: boolean = true
 
-    if (environment.tipo == 'ONG'){
+    if (environment.tipo == 'ONG') {
       ok = false
     }
     return ok
   }
-  analisaONG(){
+  analisaONG() {
     let ok: boolean = false
 
-    if (environment.tipo == 'ONG'){
+    if (environment.tipo == 'ONG') {
       ok = true
     }
     return ok
   }
-  analisaADM(){
+  analisaADM() {
     let ok: boolean = false
 
-    if (environment.tipo == 'adm'){
+    if (environment.tipo == 'adm') {
       ok = true
     }
     return ok
   }
+
 }

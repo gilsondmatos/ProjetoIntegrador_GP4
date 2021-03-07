@@ -3,18 +3,27 @@
     <h3 class="mt-2">Transformando sonhos em realidade</h3>
     <!-- Exemplo de único botão danger -->
     <div class="btn-group  ">
-      <div class="row d-flex justify-content-center mb-2 mt-3">
-        <div class="col-md-4">
+      <div class="row d-flex justify-content-center mb-2 mt-5">
+        <div class="col-md-4 ">
           <div class="form-group">
             <input size="120" type="text" class="form-control text-center" id="nomeProduto"
-              placeholder="Digite o nome de um produto" [(ngModel)]='nomeProduto' (keyup)='findByNomeProduto()'>
+              placeholder="Pesquise pelo nome de um produto" [(ngModel)]='nomeProduto' (keyup)='findByNomeProduto()'>
           </div>
+
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <input size="120" type="text" class="form-control text-center" id="causaProduto"
+              placeholder="Pesquise pela nome de uma causa " [(ngModel)]='causaProduto' (keyup)='findByCausaProduto()'>
+          </div>
+
         </div>
       </div>
 
     </div>
   </div>
 </div>
+
 <!-- card dos produtos  -->
 <div class="py-5 bg-light">
   <div class="container">
@@ -33,7 +42,8 @@
           </div>
           <div class="d-flex justify-content-around card-color align-items-center">
             <p class="card-text textPreco">R$ {{item.preco}}</p>
-            <button type="button" class="btn btn-outline-primary text-center mb-3" (click)='comprar(item.id)'>Comprar</button>
+            <button type="button" class="btn btn-outline-primary text-center mb-3"
+              (click)='comprar(item.id)'>Comprar</button>
           </div>
         </div>
       </div>

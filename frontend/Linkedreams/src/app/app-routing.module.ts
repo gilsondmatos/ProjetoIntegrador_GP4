@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CadastroCategoriaComponent } from './cadastro-categoria/cadastro-categoria.component';
-import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
+import { CadastroCategoriaComponent } from './cadastro/cadastro-categoria/cadastro-categoria.component';
+import { CadastroProdutoComponent } from './cadastro/cadastro-produto/cadastro-produto.component';
 
 import { ContatoComponent } from './contato/contato.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
-import { ExibirCategoriasComponent } from './exibir-categorias/exibir-categorias.component';
-import { ExibirProdutosComponent } from './exibir-produtos/exibir-produtos.component';
+import { ExibirCategoriasComponent } from './exibir/exibir-categorias/exibir-categorias.component';
+import { ExibirProdutosComponent } from './exibir/exibir-produtos/exibir-produtos.component';
 
 import { InicioComponent } from './inicio/inicio.component';
-import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
-import { OngComponent } from './ong/ong.component';
+import { ListaProdutosComponent } from './lista/lista-produtos/lista-produtos.component';
+import { OngComponent } from './faca-parte/ong.component';
 import { PagamentoComponent } from './pagamento/pagamento.component';
-import { ProdutosByCategoriaComponent } from './produtos-by-categoria/produtos-by-categoria.component';
+import { ProdutosByCategoriaComponent } from './lista/produtos-by-categoria/produtos-by-categoria.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 
 

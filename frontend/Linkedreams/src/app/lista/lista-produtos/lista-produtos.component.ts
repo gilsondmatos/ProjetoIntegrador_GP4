@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
-import { Produto } from '../Model/Produto';
-import { AlertasService } from '../service/alertas.service';
-import { ProdutoService } from '../service/produto.service';
+import { Produto } from '../../Model/Produto';
+import { AlertasService } from '../../service/alertas.service';
+import { ProdutoService } from '../../service/produto.service';
 
 @Component({
   selector: 'app-lista-produtos',
@@ -14,6 +14,7 @@ export class ListaProdutosComponent implements OnInit {
 
   listaProdutos: Produto[]
   nomeProduto: string
+  causaProduto:string
 
   constructor(
     private produtoService:ProdutoService,
@@ -51,4 +52,14 @@ export class ListaProdutosComponent implements OnInit {
       })
     }
   }
+  
+  findByCausaProduto(){
+    if(this.causaProduto==''){
+       this.getAllProdutos()
+     }else{
+       this.produtoService.getByCausaProduto(this.causaProduto).subscribe((resp: Produto[])=>{
+         this.listaProdutos = resp
+       })
+     }
+   }
 }
