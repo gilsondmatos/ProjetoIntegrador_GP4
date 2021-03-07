@@ -57,4 +57,12 @@ body {
   object-fit: cover;
   height: 300px;
 }
+.img-thumbnail {
+  border: none;
+}
+
+.fonte-titulo {
+  font-family: 'Roboto', sans-serif;
+  color: #2699FB;
+}
 

@@ -7,22 +7,21 @@
     data-target="#conteudoNavbarSuportado"
     aria-controls="conteudoNavbarSuportado"
     aria-expanded="false"
-    aria-label="Alterna navegação"
-  >
+    aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-    <ul class="navbar-nav mr-auto ">
+    <ul class="navbar-nav mr-auto align-items-center">
       <li class="nav-item active">
-        <a class="navbar-brand" 
+        <a class="navbar-brand"
         routerLink='/inicio'
           ><img
             src="../../assets/img/Logo_LinkeDreams (1).png"
             alt="Imagem Usuário"
             width="140px"
             class="img-fluid"
-            
+
         /></a>
       </li>
       <li *ngIf='authService.analisaONG()' class="nav-item active cursor">
@@ -37,7 +36,7 @@
       <li *ngIf='authService.deslogado()' class="nav-item active">
         <a class="nav-link " routerLink='/faca-parte' >Faça Parte</a>
       </li>
-      
+
       <li class="nav-item active">
         <a class="nav-link " routerLink='/quem-somos'>Quem Somos</a>
       </li>
