@@ -40,7 +40,7 @@ public class Usuario {
 	@Size (min = 6, max = 255)
 	private String senha;
 	
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties("usuario")
     private List<Produto> produto;
 
