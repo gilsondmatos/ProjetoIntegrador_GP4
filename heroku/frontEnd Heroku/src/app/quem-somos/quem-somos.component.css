@@ -1,0 +1,180 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.texto-pagina {
+  font-size: 14pt;
+   font-family: 'Roboto',
+   sans-serif;
+   text-align: justify;
+} */
+
+.imagem-estatica {
+  object-fit: inherit;
+  height: 400px;
+  object-position: 20%;
+}
+
+.fonte-titulo {
+  font-family: 'Roboto', sans-serif;
+}
+
+.background-texto-Plataforma {
+  background: #F1F9FF;
+}
+
+.cor-texto {
+  font-size: 35px;
+  font-weight: 900;
+  color: #2699FB;
+}
+
+.btn-cor-botao {
+  background: #2699FB;
+  color: white;
+}
+
+.cor-background-depoimentos {
+  background: #2699FB;
+}
+
+.card-largura {
+  max-width: 18rem;
+  max-height: 25rem;
+}
+
+.nav-item {
+  list-style-type: none;
+}
+
+.enp {
+  margin-left: 500px;
+}
+
+@media (max-width:767px) {
+  h2 {
+    margin-bottom: 25px;
+    padding-top: 25px;
+    font-size: 24px
+  }
+}
+
+.intro {
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto
+}
+
+.intro p {
+  margin-bottom: 0
+}
+
+.people {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.item {
+  margin-bottom: 30px
+}
+
+.item .box {
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  position: relative;
+  overflow: hidden
+}
+
+.item .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(31, 148, 255, 0.75);
+  transition: opacity 0.15s ease-in;
+  opacity: 0;
+  padding-top: 80px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15)
+}
+
+.item:hover .cover {
+  opacity: 1
+}
+
+.item .name {
+  font-weight: bold;
+  margin-bottom: 8px
+}
+
+.item .title {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #BBD8FB;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-bottom: 20px
+}
+
+.social {
+  font-size: 18px
+}
+
+.social a {
+  color: inherit;
+  margin: 0 10px;
+  display: inline-block;
+  opacity: 0.7
+}
+
+.social a:hover {
+  opacity: 1
+}
+.font-subtitulo {
+  font-size: 25px;
+}
+
+.imagem-estatica {
+  object-fit: cover;
+  height: 400px;
+  object-position: 0 35%;
+}
+.text-align {
+  text-align: justify;
+}
+.text-ojetivo {
+  color: #2699FB;
+  font-weight: 700;
+}
+
+#contato {
+  border-color: #e2e8f0;
+  gap: normal;
+  line-height: 24px;
+}
+.mr-3 {
+  border-color: #e2e8f0;
+  gap: normal;
+   line-height: 24px;
+   margin: 0px 12px 0px 0px;
+}
+
+.container .flex .flex-row .pt-12 .px-2 .px-8 {
+  border-color: #e2e8f0;
+  display: flex;
+  gap: normal;
+  line-height: 24px;
+  margin: 0px 391.5px;
+  padding: 48px 8px 32px;
+}
+
+.text-lg {
+  font-size: 16pt;
+}
+
+
+
