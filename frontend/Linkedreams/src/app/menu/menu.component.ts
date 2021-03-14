@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { UserLogin } from '../Model/UserLogin';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
+import { CommunicationService } from '../service/communication.service';
 
 @Component({
   selector: 'app-menu',
@@ -13,24 +14,23 @@ import { AuthService } from '../service/auth.service';
 export class MenuComponent implements OnInit {
 
   userLogin: UserLogin = new UserLogin()
+  
   constructor(
     public authService: AuthService,
     private router: Router,
-    private alertas: AlertasService
-  ) { }
-
+    private alertas: AlertasService,
+    private communicationService: CommunicationService
+  ) {
+    
+    this.communicationService.componentMethodCalled$.subscribe(
+        () => {
+          this.userLogin.nome_completo=environment.nome_completo
+        }
+      );
+    
+  }
   ngOnInit() {
     window.scroll(0, 0)
-  }
-
-  direcionaMenu() {
-    if (environment.tipo == 'ONG') {
-      this.router.navigate(["/cadastroProduto"])
-    } else if (environment.tipo == 'adm') {
-      this.router.navigate(["/cadastroCategoria"])
-    } else {
-      this.router.navigate(["/listaProdutos"])
-    }
   }
 
   sair() {
@@ -39,11 +39,12 @@ export class MenuComponent implements OnInit {
     environment.nome_completo = ''
     environment.tipo = ''
     environment.id = 0
+    this.userLogin= new UserLogin()
   }
+
   entrar() {
     this.authService.entrar(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp
-
       environment.id = this.userLogin.id
       environment.token = this.userLogin.token
       environment.nome_completo = this.userLogin.nome_completo

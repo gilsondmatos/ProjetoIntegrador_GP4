@@ -4,4 +4,5 @@ export const environment = {
   nome_completo:'',
   id:0,
   tipo:'',
+  load: false
 };
