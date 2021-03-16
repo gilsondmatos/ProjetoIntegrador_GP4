@@ -12,7 +12,7 @@ import { AuthService } from '../service/auth.service';
 export class OngComponent implements OnInit {
 
 
-  user: User=new User
+  user: User = new User
   confirmarSenha: string
   tipoUsuario: string
 
@@ -24,30 +24,34 @@ export class OngComponent implements OnInit {
 
   ngOnInit() {
 
-    window.scroll(0,0)
+    window.scroll(0, 0)
 
   }
 
-  confirmSenha(event: any){
-    this.confirmarSenha=event.target.value
+  confirmSenha(event: any) {
+    this.confirmarSenha = event.target.value
   }
-  tipoUser(event: any){
-    this.tipoUsuario=event.target.value
+  tipoUser(event: any) {
+    this.tipoUsuario = event.target.value
   }
-  cadastrar(){
-    this.user.tipo=this.tipoUsuario
-    if(this.user.senha!=this.confirmarSenha){
-      this.alertas.showAlertDanger('As senhas nâo coincidem! ')
-    }else{
-      this.authService.cadastrar(this.user).subscribe((resp:User)=>{
-        this.user=resp
+
+
+
+  cadastrar() {
+    this.user.tipo = this.tipoUsuario
+    if (this.user.senha == this.confirmarSenha && this.user.email.includes('@') && this.user.email.includes('.com')) {
+      this.authService.cadastrar(this.user).subscribe((resp: User) => {
+        this.user = resp
         this.router.navigate(["/inicio"])
         this.alertas.showAlertSuccess('Usuário cadastrado com sucesso!')
-      },error=>{
-        if(error.status==400){
-          this.alertas.showAlertDanger('Preencha todos os dados!')
+      }, error => {
+        if (error.status == 400) {
+          this.alertas.showAlertDanger('Verifique se todos os campos estão preenchidos!')
         }
       })
     }
+   else {
+    this.alertas.showAlertDanger('Senhas nâo coincidem ou o email está inválido! ')
+  }
   }
 }

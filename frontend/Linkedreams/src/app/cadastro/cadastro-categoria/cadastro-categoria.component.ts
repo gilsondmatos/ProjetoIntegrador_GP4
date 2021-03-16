@@ -72,10 +72,8 @@ export class CadastroCategoriaComponent implements OnInit {
       this.findAllCategorias()
       this.router.navigate(['/exibirCategorias'])
     }, error => {
-      if (error.status == 500) {
-        this.alertas.showAlertDanger('Preencha todos os campos!')
-      }
-    })
+      this.alertas.showAlertDanger('Verifique se todos os campos estão preenchidos!')
+  })
   }
 
 

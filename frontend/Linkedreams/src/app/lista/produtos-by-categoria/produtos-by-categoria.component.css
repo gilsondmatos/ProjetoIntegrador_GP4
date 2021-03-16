@@ -1,30 +1,50 @@
-.carrousel-size {
-    object-fit: cover;
-    height: 400px;
-     object-position: 0 20%;
-  }
-  .card-color{
-     background: #F1F9FF
-  }
-  
-   .bg-footer {
-    background: #2699FB;
-  }
-  * {
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .card-altura-largura{
-    height: 30rem;
-    max-height: 30rem;
-    min-height: 30rem;
-    max-width: 20rem;
-  }
-  
-  .img {
-  max-width: 100%;
-  width: 350px;
-  height: 200px;
+.card-color{
+  background: #F1F9FF
+}
+
+.bg-footer {
+ background: #2699FB;
+}
+
+.color-secondary{
+  background-color: #F1F9FF;
+}
+
+.color-principal {
+  background: #2699FB;
+}
+
+.color-texto{
+  color: #2699FB;
+}
+.card-largura {
+
+  max-width: 18rem;
   object-fit: cover;
-  }
-  
+}
+
+
+.textPreco {
+ font-family: 'Roboto', sans-serif;
+ font-size: 15pt;
+ font-weight: 700;
+}
+
+.textFonte{
+ font-size: 12pt;
+}
+
+.card-altura-largura{
+ height: 30rem;
+ max-height: 30rem;
+ min-height: 30rem;
+ max-width: 20rem;
+}
+
+.img {
+max-width: 100%;
+width: 350px;
+height: 200px;
+object-fit: cover;
+}
+

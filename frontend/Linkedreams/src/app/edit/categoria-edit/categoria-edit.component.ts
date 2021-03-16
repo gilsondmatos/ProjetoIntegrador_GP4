@@ -62,7 +62,11 @@ export class CategoriaEditComponent implements OnInit {
       this.categoria = resp
       this.alertas.showAlertSuccess('Categoria atualizada com sucesso!')
       this.router.navigate(['/exibirCategorias'])
-    })
+    }, error => {
+    
+      this.alertas.showAlertDanger('Verifique se todos os campos estão preenchidos!')
+    
+  })
   }
 
 }

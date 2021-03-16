@@ -109,7 +109,11 @@ export class CadastroProdutoComponent implements OnInit {
       this.alertas.showAlertSuccess('Produto cadastrado com sucesso!')
       this.produto = new Produto()
       this.router.navigate(['/exibirProdutos'])
-    })
+    }, error => {
+    
+      this.alertas.showAlertDanger('Verifique se todos os campos estão preenchidos!')
+    
+  })
 
 
   }

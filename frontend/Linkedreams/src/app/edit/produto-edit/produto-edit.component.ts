@@ -79,6 +79,10 @@ export class ProdutoEditComponent implements OnInit {
       this.produto = resp
       this.alertas.showAlertSuccess('Produto atualizado com sucesso!')
       this.router.navigate(['/exibirProdutos'])
+    }, error => {
+    
+        this.alertas.showAlertDanger('Verifique se todos os campos estão preenchidos!')
+      
     })
   }
 

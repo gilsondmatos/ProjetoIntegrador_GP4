@@ -17,16 +17,16 @@
         <form>
           <div class="form-group">
             <label for="nome-usuario">Nome:</label>
-            <input type="text" class="form-control" id="nome-usuario" placeholder="Digite seu nome">
+            <input [(ngModel)]='nome' type="text" name="nome" class="form-control" id="nome-usuario" placeholder="Digite seu nome">
           </div>
           <div class="form-group">
             <label for="email">E-mail:</label>
-            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" aria-describedby="emailHelp">
+            <input [(ngModel)]='email' type="email" name="email"  class="form-control" id="email" placeholder="Digite seu e-mail" aria-describedby="emailHelp">
           </div>
 
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Mensagem:</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"
+            <textarea  [(ngModel)]='mensagem' name="mensagem" class="form-control" id="exampleFormControlTextarea1" rows="4"
               placeholder="Por favor, digite sua mensagem"></textarea>
           </div>
           <div class="d-flex justify-content-end">

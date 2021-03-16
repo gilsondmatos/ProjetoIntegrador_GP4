@@ -18,6 +18,9 @@ export class PagamentoComponent implements OnInit {
   produto: Produto = new Produto()
   user: User = new User()
   idUser = environment.id
+  totalPagamento: number = 0.0
+  cupom: string
+  teste: number = 0.0
 
   constructor(
     private router: Router,
@@ -28,15 +31,42 @@ export class PagamentoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
     if (environment.token == '') {
       this.router.navigate(['/inicio'])
     }
     let id = this.route.snapshot.params['id']
-  
+
     this.findByIdProduto(id)
     this.findByIdUser()
+
+
   }
+  analisaTotal(total: number) {
+    if (this.cupom == '') {
+      this.totalPagamento = total
+    } else if (this.cupom == 'NOSCONTRATEM') {
+      this.totalPagamento = total * 0.9
+    } else {
+      this.totalPagamento = total
+    }
+    return this.totalPagamento
+  }
+
+  // analisaCupom(){
+  //   if(this.cupom==''){
+  //     this.totalPagamento=this.produto.preco
+  //     console.log('gilson')
+  //     console.log(this.totalPagamento)
+  //   }
+  //   else if(this.cupom=='NOSCONTRATEM'){
+  //     this.totalPagamento=this.produto.preco*0.9
+  //     console.log('kelven')
+  //     console.log(this.totalPagamento)
+  //   }
+
+
+  // }
 
   findByIdUser() {
     this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
@@ -50,15 +80,15 @@ export class PagamentoComponent implements OnInit {
     })
 
   }
-  analisaDoacao(){
-    let ok :boolean =false
+  analisaDoacao() {
+    let ok: boolean = false
 
-    if(this.produto.categoria.nome=='Doacão'){
-     ok=true
+    if (this.produto.categoria.nome == 'Doacão') {
+      ok = true
     }
     return ok
   }
-  Comprar(){
+  Comprar() {
     this.alertas.showAlertSuccess('Compra realizada com sucesso!')
     this.router.navigate(['/inicio'])
   }
