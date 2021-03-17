@@ -18,31 +18,31 @@ export class ProdutoService {
   }
 
   getAllProdutos(): Observable<Produto[]>{
-    return this.http.get<Produto[]>('http://localhost:8080/produtos', this.token)
+    return this.http.get<Produto[]>('https://linkedreams.herokuapp.com/produtos', this.token)
   }
 
   getByIdProduto(id: number): Observable<Produto>{
-    return this.http.get<Produto>(`http://localhost:8080/produtos/${id}`, this.token)
+    return this.http.get<Produto>(`https://linkedreams.herokuapp.com/produtos/${id}`, this.token)
   }
 
   getByNomeProduto(nome: string): Observable<Produto[]>{
-    return this.http.get<Produto[]>(`http://localhost:8080/produtos/nome/${nome}`, this.token)
+    return this.http.get<Produto[]>(`https://linkedreams.herokuapp.com/produtos/nome/${nome}`, this.token)
   }
-  
+
   getByCausaProduto(causa: string): Observable<Produto[]>{
-    return this.http.get<Produto[]>(`http://localhost:8080/produtos/causa/${causa}`, this.token)
+    return this.http.get<Produto[]>(`https://linkedreams.herokuapp.com/produtos/causa/${causa}`, this.token)
   }
 
   postProduto(produto: Produto) : Observable<Produto>{
-    return this.http.post<Produto>('http://localhost:8080/produtos', produto, this.token)
+    return this.http.post<Produto>('https://linkedreams.herokuapp.com/produtos', produto, this.token)
   }
 
   putProduto(produto: Produto): Observable<Produto>{
-    return this.http.put<Produto>('http://localhost:8080/produtos', produto, this.token)
+    return this.http.put<Produto>('https://linkedreams.herokuapp.com/produtos', produto, this.token)
   }
 
   deleteProduto(id: number){
-    return this.http.delete(`http://localhost:8080/produtos/${id}`, this.token)
+    return this.http.delete(`https://linkedreams.herokuapp.com/produtos/${id}`, this.token)
   }
 
 }
